@@ -10,7 +10,21 @@ import 'package:provider/provider.dart';
 import 'package:timer_count_down/timer_controller.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 import 'package:flutter/services.dart';
+import 'package:fitmess/Models/JSONEmailPasswordModel.dart';
 
+/*class VerifyPhoneNumberScreen extends StatelessWidget {
+  String phoneNumber;
+  String ComeFrom;
+  VerifyPhoneNumberScreen({this.phoneNumber,this.ComeFrom});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider<checkActivationCodeViewModel>(
+      create: (context)=>checkActivationCodeViewModel(),
+      child:VerifyPhoneNumberScreenClass(phoneNumber: phoneNumber,ComeFrom: ComeFrom,) ,
+    );
+  }
+}*/
 class VerifyPhoneNumberScreen extends StatelessWidget {
   String phoneNumber;
   String ComeFrom;
@@ -18,12 +32,9 @@ class VerifyPhoneNumberScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        Provider(create: (context)=>checkActivationCodeViewModel()),
-        Provider(create: (context)=>getActivationCodeViewModel()),
-      ],
-      child:VerifyPhoneNumberScreenClass(phoneNumber: phoneNumber,) ,
+    return ChangeNotifierProvider<checkActivationCodeViewModel>(
+      create: (context)=>checkActivationCodeViewModel(),
+      child:VerifyPhoneNumberScreenClass(phoneNumber: phoneNumber,ComeFrom: ComeFrom,) ,
     );
   }
 }
@@ -51,11 +62,13 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
     ));
 
     activationCodeEnum = context.watch<checkActivationCodeViewModel>().r_Condition;
-
+    var m_context = context;
     if(activationCodeEnum == ActivationCodeEnum.successfullyLoaded){
+      JSONEmailPasswordModel myJson = Provider.of<checkActivationCodeViewModel>(m_context, listen: false).jsonEmailPasswordModel;
       Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (BuildContext context) => RegisterScreen(
-            jsonEmailPasswordModel:Provider.of<checkActivationCodeViewModel>(context, listen: false).jsonEmailPasswordModel ,)));
+            jsonEmailPasswordModel: myJson,)));
+
     }
     else if (activationCodeEnum == ActivationCodeEnum.fail){
       _scaffoldKey.currentState.showSnackBar(new SnackBar(content: new Text(
@@ -154,7 +167,7 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                 SizedBox(height: 30,),
                 GestureDetector(
                   onTap: ()async{
-                    await Provider.of<getActivationCodeViewModel>(context, listen: false).getActivationCode(phoneNumber);
+                    /*await Provider.of<getActivationCodeViewModel>(context, listen: false).getActivationCode(phoneNumber);*/
                   },
                   child: RichText(
                     text: new TextSpan(

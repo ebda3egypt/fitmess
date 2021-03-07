@@ -46,7 +46,6 @@ class _SplachScreenState extends State<SplachScreen> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
       statusBarIconBrightness: Brightness.dark,
       //or set color with: Color(0xFF0000FF)
     ));

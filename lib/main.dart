@@ -66,8 +66,8 @@ class _MyAppState extends State<MyApp> {
       ),
 
       
-      home:SplachScreen() /*RegisterScreen(jsonEmailPasswordModel: new JSONEmailPasswordModel(ID: "2689",username: "201021957569",
-          json_password: "ac8d2863431f1594ccd4c81eaa607f3b67",activationCode: "591664"))*/,
+      home:/*SplachScreen() */RegisterScreen(jsonEmailPasswordModel: new JSONEmailPasswordModel(ID: "2689",username: "201062780652",
+          json_password: "1da1644a89d84da276f68046b9bcac68fc",activationCode: "925586")),
     );
 
   }

@@ -11,7 +11,7 @@ import 'package:fitmess/Widgets/LanguageSubmitButton.dart';
 import 'package:international_phone_input/international_phone_input.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
-
+import 'dart:async';
 
 class CheckPhoneScreen extends StatelessWidget {
     String ComeFrom = "";
@@ -32,9 +32,9 @@ class CheckPhoneScreenClass extends StatelessWidget {
   String ComeFrom = "";
   CheckPhoneScreenClass(this.ComeFrom);
 
-
+  String phoneNumber="";
   Config _config = Config();
-  String phoneNumber;
+  String m_phoneNumber="";
   String phoneIsoCode='+20';
   bool visible = false;
   String confirmedNumber = '';
@@ -45,6 +45,7 @@ class CheckPhoneScreenClass extends StatelessWidget {
       String number, String internationalizedPhoneNumber, String isoCode) {
       phoneNumber = number;
       phoneIsoCode = isoCode;
+      m_phoneNumber = "2${phoneNumber}";
   }
 
   onValidPhoneNumber(
@@ -58,12 +59,26 @@ class CheckPhoneScreenClass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
       statusBarIconBrightness: Brightness.dark,
-      //or set color with: Color(0xFF0000FF)
     ));
-
     activationCodeEnum = context.watch<getActivationCodeViewModel>().r_Condition;
+    print("hhheeelllooo    : ${activationCodeEnum}");
+
+    if(activationCodeEnum == ActivationCodeEnum.successfullyLoaded){
+
+      print("ddonnnee");
+      Timer(Duration(seconds: 1), () => Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (BuildContext context) => VerifyPhoneNumberScreen(phoneNumber: m_phoneNumber,ComeFrom:ComeFrom))));
+      /*Navigator.of(context).push(MaterialPageRoute(
+          builder: (BuildContext context) => VerifyPhoneNumberScreen(phoneNumber: m_phoneNumber,ComeFrom:ComeFrom)));*/
+    }
+    else if (activationCodeEnum == ActivationCodeEnum.fail){
+      _scaffoldKey.currentState.showSnackBar(new SnackBar(content: new Text(
+        Provider.of<getActivationCodeViewModel>(context, listen: false).error_mess, textAlign: TextAlign.right,
+        style: TextStyle(fontFamily: 'Arabic'),)));
+    }
+
+
     return Scaffold(
       key: _scaffoldKey,
       body: SafeArea(
@@ -123,17 +138,7 @@ class CheckPhoneScreenClass extends StatelessWidget {
                   ],
                 ) : GestureDetector(
                  onTap: ()async{
-                   String m_phone= "2${phoneNumber}";
-                   await Provider.of<getActivationCodeViewModel>(context, listen: false).getActivationCode(m_phone);
-                   if(activationCodeEnum == ActivationCodeEnum.successfullyLoaded){
-                     Navigator.of(context).push(MaterialPageRoute(
-                         builder: (BuildContext context) => VerifyPhoneNumberScreen(phoneNumber:m_phone,ComeFrom:ComeFrom)));
-                   }
-                   else{
-                     _scaffoldKey.currentState.showSnackBar(new SnackBar(content: new Text(
-                       Provider.of<getActivationCodeViewModel>(context, listen: false).error_mess, textAlign: TextAlign.right,
-                       style: TextStyle(fontFamily: 'Arabic'),)));
-                   }
+                   await Provider.of<getActivationCodeViewModel>(context, listen: false).getActivationCode(m_phoneNumber);
                  },
                    child: LanguageSubmitButton(bu_text: _config.get_text(context,"check_phone_button_text"),bu_color: Colors.blue[800],textColor: Colors.white,)),
                 SizedBox(height: 20,),

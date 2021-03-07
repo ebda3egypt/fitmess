@@ -40,11 +40,7 @@ class _introductionScreenState extends State<introductionScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.black,
-      statusBarIconBrightness: Brightness.light,
-      //or set color with: Color(0xFF0000FF)
-    ));
+
     return Material(
       child: Scaffold(
         backgroundColor: Colors.black,
