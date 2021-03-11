@@ -4,6 +4,7 @@ import 'package:fitmess/Helpers/Config.dart';
 import 'package:fitmess/Widgets/LanguageSubmitButton.dart';
 import 'package:fitmess/Pages/HomePage.dart';
 import 'package:flutter/services.dart';
+import 'package:fitmess/Pages/AssessmentQuestions/birthdayQuestionScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
 
@@ -68,7 +69,7 @@ class WelcomeScreen extends StatelessWidget {
                     GestureDetector(
                         onTap: ()async{
                           Navigator.of(context).pushReplacement(MaterialPageRoute(
-                              builder: (BuildContext context) => HomePage()));
+                              builder: (BuildContext context) => birthdayQuestionScreen()));
                         },
                         child: Container(
                           margin:EdgeInsets.symmetric(vertical: 5,horizontal: 100),

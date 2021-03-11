@@ -61,5 +61,13 @@
   "Login_txt": "تسجيل الدخول",
   "welcom_txt": "أهلا , ",
   "welcom_txt2": "أنا ريكسا ، أخصائية التغذية والمدرب في مجال الذكاء الاصطناعي. استعد للتقييم من أجل تحليل احتياجات جسمك لتحقيق أفضل النتائج.",
-  "welcom_bu_txt": "أبدأ التقييم"
+  "welcom_bu_txt": "أبدأ التقييم",
+  "assessment_q1_txt": "تاريخ ميلادك ؟  ",
+  "assessment_q2_txt": "نوعك ؟ ",
+  "assessment_q3_txt": "طولك ؟  ",
+  "assessment_q4_txt": "وزنك الحالى ؟ ",
+  "assessment_headline1_txt": "معلومات اساسية",
+  "assessment_headline2_txt": "تركيب الجسم",
+  "assessment_headline3_txt": "أهدافك",
+  "assessment_continue_txt": "أستمرار"
 }
