@@ -69,7 +69,7 @@ class WelcomeScreen extends StatelessWidget {
                     GestureDetector(
                         onTap: ()async{
                           Navigator.of(context).pushReplacement(MaterialPageRoute(
-                              builder: (BuildContext context) => birthdayQuestionScreen()));
+                              builder: (BuildContext context) => birthdayQuestionScreen(false)));
                         },
                         child: Container(
                           margin:EdgeInsets.symmetric(vertical: 5,horizontal: 100),

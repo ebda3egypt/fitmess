@@ -9,6 +9,7 @@ import 'package:international_phone_input/international_phone_input.dart';
 import 'package:provider/provider.dart';
 import 'package:fitmess/Pages/HomePage.dart';
 import 'package:flutter/services.dart';
+import 'package:fitmess/Pages/AssessmentQuestions/birthdayQuestionScreen.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -65,7 +66,9 @@ class LoginScreenClass extends StatelessWidget {
     print("check serv = ${Loginenum.toString()}");
     if(Loginenum == ServiceEnum.successfullyLoaded){
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (BuildContext context) => HomePage()));
+          builder: (BuildContext context) => birthdayQuestionScreen(false)));
+     /* Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (BuildContext context) => HomePage()));*/
     }
     else if (Loginenum == ServiceEnum.fail){
       _scaffoldKey.currentState.showSnackBar(new SnackBar(content: new Text(

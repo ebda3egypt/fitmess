@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fitmess/Helpers/Config.dart';
 import 'package:fitmess/Widgets/LanguageSubmitButton.dart';
+import 'package:fitmess/Widgets/AppBarWidget.dart';
+import 'package:fitmess/Pages/AssessmentQuestions/GenderQuestionScreen.dart';
+import 'package:fitmess/Pages/AssessmentQuestions/InformationSummaryScreen.dart';
 
 class birthdayQuestionScreen extends StatefulWidget {
+  bool isEdit;
+  birthdayQuestionScreen(this.isEdit);
   @override
   _birthdayQuestionScreenState createState() => _birthdayQuestionScreenState();
 }
@@ -41,8 +46,10 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
 
     return Material(
       child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBarWidget().AppBarWid(),
         body: Padding(
-          padding: const EdgeInsets.only(top:20),
+          padding: const EdgeInsets.only(top:10),
           child:Container(
             padding: EdgeInsets.symmetric(vertical: 20,horizontal: 5),
             color: Colors.white,
@@ -303,7 +310,17 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                       SizedBox(height: 50,),
 
                       GestureDetector(
-                          onTap: ()async{
+                          onTap: (){
+                            if(is_Completed){
+                              if(widget.isEdit){
+                                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                    builder: (BuildContext context) =>InformationSummaryScreen()));
+                              }
+                              else{
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (BuildContext context) => GenderQuestionScreen(false)));
+                              }
+                            }
                            /* Navigator.of(context).pushReplacement(MaterialPageRoute(
                                 builder: (BuildContext context) => HomePage()));*/
                           },

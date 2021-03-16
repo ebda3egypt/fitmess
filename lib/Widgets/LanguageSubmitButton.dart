@@ -11,7 +11,7 @@ class LanguageSubmitButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(vertical: 15),
+      padding: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
       alignment: Alignment.center,
       decoration: BoxDecoration(
           color: bu_color,

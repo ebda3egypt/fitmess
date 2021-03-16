@@ -1,15 +1,7 @@
-import 'package:fitmess/Pages/RegisterScreen.dart';
-import 'package:fitmess/Pages/ResetPasswordScreen.dart';
 import 'package:fitmess/Pages/SplachScreen.dart';
-import 'package:fitmess/Pages/VerfiyPhoneNumberScreen.dart';
-import 'package:fitmess/Pages/WelcomeScreen.dart';
-import 'package:fitmess/datetest.dart';
 import 'package:fitmess/localization/demo_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fitmess/Pages/AssessmentQuestions/birthdayQuestionScreen.dart';
-import 'Models/JSONEmailPasswordModel.dart';
-import 'localization/localization_constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -70,7 +62,6 @@ class _MyAppState extends State<MyApp> {
       home:SplachScreen() /*RegisterScreen(jsonEmailPasswordModel: new JSONEmailPasswordModel(ID: "2689",username: "201062780652",
           json_password: "1da1644a89d84da276f68046b9bcac68fc",activationCode: "925586"))*/,
     );
-
   }
 }
 
