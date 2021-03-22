@@ -56,7 +56,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
             child: Center(
               child: Container(
                 width: double.infinity,
-                margin: EdgeInsets.only(top: 80),
+                margin: EdgeInsets.only(top: 0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -89,6 +89,14 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                           child:Text(_config.get_text(context, "assessment_q1_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
                         ),
                       ),
+                      Container(
+                        width: double.infinity,
+                        transform: Matrix4.translationValues(0.0, -20.0, 0.0),
+
+                        child: Center(
+                          child:Text(_config.get_text(context, "assessment_q11_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                        ),
+                      ),
                       SizedBox(height: 40,),
                       Form(
                           key: _formKey,
@@ -98,15 +106,15 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     focusNode: firstFocus,
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
-                                    style: TextStyle(fontSize: 20),
-                                    decoration: InputDecoration(hintText: '0',counterText: "",border: InputBorder.none,),
+                                    style: TextStyle(fontSize: 32),
+                                    decoration: InputDecoration(hintText: 'D',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
                                       if(v.length==1){
@@ -118,13 +126,13 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                   ),
                                 ),
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     focusNode: secondFocus,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32),
                                     maxLength: 1,
-                                    decoration: InputDecoration(hintText: '0',counterText: "",border: InputBorder.none,),
+                                    decoration: InputDecoration(hintText: 'D',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
                                       if(t.length==1){
@@ -139,14 +147,14 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                 ),
 
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
                                     enabled: false,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32),
                                     decoration: InputDecoration(hintText: '/',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
@@ -156,15 +164,15 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                 ),
 
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     focusNode: thirdFocus,
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
-                                    style: TextStyle(fontSize: 20),
-                                    decoration: InputDecoration(hintText: '0',counterText: "",border: InputBorder.none,),
+                                    style: TextStyle(fontSize: 32),
+                                    decoration: InputDecoration(hintText: 'M',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
                                       if(v.length==1){
@@ -178,13 +186,13 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                   ),
                                 ),
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     focusNode: forthFocus,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32),
                                     maxLength: 1,
-                                    decoration: InputDecoration(hintText: '0',counterText: "",border: InputBorder.none,),
+                                    decoration: InputDecoration(hintText: 'M',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
                                       if(t.length==1){
@@ -200,14 +208,14 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
 
 
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
                                     enabled: false,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32),
                                     decoration: InputDecoration(hintText: '/',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
@@ -217,15 +225,15 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                 ),
 
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     focusNode:fifthFocus ,
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
-                                    style: TextStyle(fontSize: 20),
-                                    decoration: InputDecoration(hintText: '0',counterText: "",border: InputBorder.none,),
+                                    style: TextStyle(fontSize: 32),
+                                    decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
                                       if(v.length==1){
@@ -240,13 +248,13 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                 ),
 
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     focusNode: sixthFocus,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32),
                                     maxLength: 1,
-                                    decoration: InputDecoration(hintText: '0',counterText: "",border: InputBorder.none,),
+                                    decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
                                       if(t.length==1){
@@ -261,13 +269,13 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                 ),
 
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     focusNode: seventhFocus,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32),
                                     maxLength: 1,
-                                    decoration: InputDecoration(hintText: '0',counterText: "",border: InputBorder.none,),
+                                    decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
                                       if(t.length==1){
@@ -282,13 +290,13 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                 ),
 
                                 Container(
-                                  width: 20,
-                                  height: 100,
+                                  width: 33,
+                                  height: 60,
                                   child: TextFormField(
                                     focusNode: eighthFocus,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32),
                                     maxLength: 1,
-                                    decoration: InputDecoration(hintText: '0',counterText: "",border: InputBorder.none,),
+                                    decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
                                       if(t.length==1){

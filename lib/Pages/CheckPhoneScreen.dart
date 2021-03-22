@@ -66,7 +66,7 @@ class CheckPhoneScreenClass extends StatelessWidget {
 
     if(activationCodeEnum == ActivationCodeEnum.successfullyLoaded){
 
-      print("ddonnnee");
+      print("ddonnnee  : ${m_phoneNumber}");
       Timer(Duration(seconds: 1), () => Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (BuildContext context) => VerifyPhoneNumberScreen(phoneNumber: m_phoneNumber,ComeFrom:ComeFrom))));
       /*Navigator.of(context).push(MaterialPageRoute(
