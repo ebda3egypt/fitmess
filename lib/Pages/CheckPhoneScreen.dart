@@ -92,11 +92,11 @@ class CheckPhoneScreenClass extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   child: Center(
-                    child:Text(_config.get_text(context, "check_phone_text"),textAlign: TextAlign.center,style: TextStyle(fontSize: 30),),
+                    child:Text(_config.get_text(context, "check_phone_text"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                   ),
                 ),
                 SizedBox(height: 50,),
-                Text(_config.get_text(context, "check_phone_textfield"),),
+                Text(_config.get_text(context, "check_phone_textfield"),style: TextStyle(fontSize: 15),),
                 SizedBox(height: 10,),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10),
@@ -112,21 +112,26 @@ class CheckPhoneScreenClass extends StatelessWidget {
                     enabledCountries: ['+20','+966','+971'],
                     showCountryCodes: true,
                     showCountryFlags: true,
+                    hintStyle:TextStyle(fontSize: 15),
                   ),
                 ),
                 SizedBox(height: 20,),
-                RichText(
-                  text: new TextSpan(
-                    style: new TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal:12.0),
+                  child: RichText(
+                    text: new TextSpan(
+                      style: new TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey,
+                        fontFamily: 'Arabic',
+                      ),
+                      children: <TextSpan>[
+                        TextSpan(text: _config.get_text(context,"check_phone_terms"),style: TextStyle(fontFamily: 'Arabic')),
+                        TextSpan(text: _config.get_text(context,"check_phone_terms2"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
+                        TextSpan(text: _config.get_text(context,"check_phone_terms3"),style: TextStyle(fontFamily: 'Arabic')),
+                        TextSpan(text: _config.get_text(context,"check_phone_terms4"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
+                      ],
                     ),
-                    children: <TextSpan>[
-                      TextSpan(text: _config.get_text(context,"check_phone_terms")),
-                      TextSpan(text: _config.get_text(context,"check_phone_terms2"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
-                      TextSpan(text: _config.get_text(context,"check_phone_terms3")),
-                      TextSpan(text: _config.get_text(context,"check_phone_terms4"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
-                    ],
                   ),
                 ),
                 SizedBox(height: 100,),
@@ -147,16 +152,20 @@ class CheckPhoneScreenClass extends StatelessWidget {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (BuildContext context) => LoginScreen()));
                   },
-                  child: RichText(
-                    text: new TextSpan(
-                      style: new TextStyle(
-                        fontSize: 16,
-                        color: Colors.black,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal:8.0),
+                    child: RichText(
+                      text: new TextSpan(
+                        style: new TextStyle(
+                          fontSize: 15,
+                          color: Colors.grey,
+                          fontFamily: 'Arabic',
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(text: _config.get_text(context,"already_have_acount"),style: TextStyle(fontFamily: 'Arabic')),
+                          TextSpan(text: _config.get_text(context,"already_have_acount2"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
+                        ],
                       ),
-                      children: <TextSpan>[
-                        TextSpan(text: _config.get_text(context,"already_have_acount")),
-                        TextSpan(text: _config.get_text(context,"already_have_acount2"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
-                      ],
                     ),
                   ),
                 ),

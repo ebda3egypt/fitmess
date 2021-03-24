@@ -1,5 +1,9 @@
 import 'package:fitmess/Pages/AssessmentQuestions/birthdayQuestionScreen.dart';
 import 'package:fitmess/Pages/SplachScreen.dart';
+import 'package:fitmess/Pages/WelcomeScreen.dart';
+import 'package:fitmess/Pages/LoginScreen.dart';
+import 'package:fitmess/Pages/RegisterScreen.dart';
+import 'package:fitmess/Models/JSONEmailPasswordModel.dart';
 
 import 'package:fitmess/localization/demo_localization.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +65,7 @@ class _MyAppState extends State<MyApp> {
       ),
 
       
-      home:birthdayQuestionScreen(false) /*RegisterScreen(jsonEmailPasswordModel: new JSONEmailPasswordModel(ID: "2689",username: "201062780652",
+      home:SplachScreen()/*birthdayQuestionScreen(false)*/ /*RegisterScreen(jsonEmailPasswordModel: new JSONEmailPasswordModel(ID: "2689",username: "201062780652",
           json_password: "1da1644a89d84da276f68046b9bcac68fc",activationCode: "925586"))*/,
     );
   }

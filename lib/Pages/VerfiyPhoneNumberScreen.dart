@@ -3,7 +3,7 @@ import 'package:fitmess/Helpers/Config.dart';
 import 'package:fitmess/Pages/RegisterScreen.dart';
 import 'package:fitmess/ViewModels/checkActivationCodeViewModel.dart';
 import 'package:fitmess/ViewModels/getActivationCodeViewModel.dart';
-import 'package:fitmess/Widgets/LanguageSubmitButton.dart';
+import 'package:fitmess/Widgets/AppBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:provider/provider.dart';
@@ -81,8 +81,9 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
       child: Scaffold(
         key: _scaffoldKey,
         backgroundColor: Colors.white,
+        appBar: AppBarWidget().AppBarWid(),
         body: Padding(
-          padding: EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 20),
+          padding: EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 20),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -93,12 +94,12 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                   child: Center(
                     child: Text(_config.get_text(context, "verify_phone_txt"),
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 30),),
+                      style: TextStyle(fontSize: 32),),
                   ),
                 ),
                 SizedBox(height: 50,),
                 Text(_config.get_text(context, "verify_phone_txt2"),
-                  textAlign: TextAlign.center, style: TextStyle(fontSize: 17),),
+                  textAlign: TextAlign.center, style: TextStyle(fontSize: 15),),
                 SizedBox(height: 20,),
                 Text(phoneNumber, textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 15),),
@@ -107,11 +108,12 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                   text: new TextSpan(
                     style: new TextStyle(
                       fontSize: 13,
-                      color: Colors.black,
+                      color: Colors.grey,
+                      fontFamily: 'Arabic',
                     ),
                     children: <TextSpan>[
                       TextSpan(
-                          text: _config.get_text(context, "verify_phone_txt3")),
+                          text: _config.get_text(context, "verify_phone_txt3"),style: TextStyle(fontFamily: 'Arabic',)),
                       TextSpan(
                           text: _config.get_text(context, "verify_phone_txt5"),
                           style: new TextStyle(fontWeight: FontWeight.bold,
@@ -173,10 +175,11 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                     text: new TextSpan(
                       style: new TextStyle(
                         fontSize: 13,
-                        color: Colors.black,
+                        color: Colors.grey,
+                        fontFamily: 'Arabic',
                       ),
                       children: <TextSpan>[
-                        TextSpan(text: _config.get_text(context, "verify_phone_txt6")),
+                        TextSpan(text: _config.get_text(context, "verify_phone_txt6"),style: TextStyle(fontFamily: 'Arabic',)),
 
                         TextSpan(text: _config.get_text(context, "verify_phone_txt7"), style: new TextStyle(fontWeight: FontWeight.bold, color: Config.app_backgroungColor, fontSize: 15)),
                       ],
@@ -190,13 +193,13 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                   children: [
                     Text(_config.get_text(context, "verify_phone_txt8"),
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 14),),
+                      style: TextStyle(fontSize: 13,color: Colors.grey),),
                     SizedBox(width: 10,),
                     Countdown(
                       controller: controller,
                       seconds: 900,
                       build: (_, double time) =>
-                          Text(format(Duration(seconds:time.round())).toString(), style: TextStyle(fontSize: 15, color: Config.app_backgroungColor,),
+                          Text(format(Duration(seconds:time.round())).toString(), style: TextStyle(fontSize: 13, color: Colors.grey,),
                           ),
                       interval: Duration(seconds: 1),
                       onFinished: () {
@@ -205,7 +208,7 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                       },
                     ),
                     SizedBox(width: 10,),
-                    Text(_config.get_text(context, "minute_txt"), textAlign: TextAlign.center, style: TextStyle(fontSize: 14),),
+                    Text(_config.get_text(context, "minute_txt"), textAlign: TextAlign.center, style: TextStyle(fontSize: 13,color: Colors.grey),),
                   ],
                 ),
                 SizedBox(height: 20,),

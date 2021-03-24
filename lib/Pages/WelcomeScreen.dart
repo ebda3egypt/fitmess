@@ -47,8 +47,8 @@ class WelcomeScreenClass extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 250,
-                      height: 250,
+                      width: 351.49,
+                      height: 288.39,
                       child: Image.asset(
                         "assets/drawables/chooseLanguage.png",
                         fit: BoxFit.cover,
@@ -61,22 +61,23 @@ class WelcomeScreenClass extends StatelessWidget {
                         child: RichText(
                           text: new TextSpan(
                             style: new TextStyle(
-                              fontSize: 24,
+                              fontSize: 32,
                               color: Colors.black,
+                              fontFamily: 'Arabic',
                             ),
                             children: <TextSpan>[
-                              TextSpan(text: _config.get_text(context,"welcom_txt")),
-                              TextSpan(text: "Khaled", style: new TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 26)),
+                              TextSpan(text: _config.get_text(context,"welcom_txt"),style: TextStyle(fontFamily: 'Arabic', )),
+                              TextSpan(text: "Khaled", style: new TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 32)),
                             ],
                           ),
                         )),
                     SizedBox(height: 30,),
                     Container(
-                        margin: EdgeInsets.symmetric(vertical: 0,horizontal: 40),
-                        child:Text(_config.get_text(context,"welcom_txt2").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                        margin: EdgeInsets.symmetric(vertical: 0,horizontal: 20),
+                        child:Text(_config.get_text(context,"welcom_txt2").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 15,color:Colors.black))
 
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: 30,),
 
                     GestureDetector(
                         onTap: ()async{

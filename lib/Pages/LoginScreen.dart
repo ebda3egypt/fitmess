@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fitmess/Widgets/LanguageSubmitButton.dart';
 import 'package:international_phone_input/international_phone_input.dart';
 import 'package:provider/provider.dart';
-import 'package:fitmess/Pages/HomePage.dart';
+import 'package:fitmess/Pages/CheckPhoneScreen.dart';
 import 'package:flutter/services.dart';
 import 'package:fitmess/Pages/AssessmentQuestions/birthdayQuestionScreen.dart';
 
@@ -89,11 +89,11 @@ class LoginScreenClass extends StatelessWidget {
                 Container(
                   width: double.infinity,
                   child: Center(
-                    child:Text(_config.get_text(context, "Login_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 30),),
+                    child:Text(_config.get_text(context, "Login_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                   ),
                 ),
                 SizedBox(height: 50,),
-                Text(_config.get_text(context, "check_phone_textfield"),),
+                Text(_config.get_text(context, "check_phone_textfield"),style: TextStyle(fontSize: 15),),
                 SizedBox(height: 10,),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10),
@@ -120,8 +120,9 @@ class LoginScreenClass extends StatelessWidget {
                     border: Border.all(color:Colors.grey[400],width: 1),
                   ),
                   child: TextFormField(
+                    style: TextStyle(fontSize: 15),
                     decoration: InputDecoration.collapsed(
-                      hintText: _config.get_text(context, "Register_enter_password_txt"),
+                      hintText: "************",
                     ),
                     controller: _passwordController,
                     keyboardType: TextInputType.text,
@@ -130,13 +131,13 @@ class LoginScreenClass extends StatelessWidget {
                     validator: (text){
                       if(text.toString().isEmpty)
                       {
-                        return"enter your password";
+                        return"Enter Your Password";
                       }
                       return null;
                     },
                   ),
                 ),
-                SizedBox(height: 100,),
+                SizedBox(height: 50,),
 
                 Loginenum == ServiceEnum.loading ? Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -154,9 +155,50 @@ class LoginScreenClass extends StatelessWidget {
 
                       }
                     },
-                    child: LanguageSubmitButton(bu_text: _config.get_text(context,"check_phone_button_text"),bu_color: Config.app_backgroungColor,textColor: Colors.white,)),
+                    child: LanguageSubmitButton(bu_text: _config.get_text(context,"Login_txt_bu"),bu_color: Config.app_backgroungColor,textColor: Colors.white,)),
 
 
+                SizedBox(height: 20,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal:12.0),
+                  child: RichText(
+                    text: new TextSpan(
+                      style: new TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey,
+                        fontFamily: 'Arabic',
+                      ),
+                      children: <TextSpan>[
+                        TextSpan(text: _config.get_text(context,"Login_txt_not_remeber"),style: TextStyle(fontFamily: 'Arabic')),
+                        TextSpan(text: _config.get_text(context,"Login_txt_reset"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
+
+                      ],
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal:12.0),
+                  child:GestureDetector (
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => CheckPhoneScreen("NewUser")));
+                    },
+                    child: RichText(
+                      text: new TextSpan(
+                        style: new TextStyle(
+                          fontSize: 15,
+                          color: Colors.grey,
+                          fontFamily: 'Arabic',
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(text: _config.get_text(context,"Login_txt_reg_1"),style: TextStyle(fontFamily: 'Arabic')),
+                          TextSpan(text: _config.get_text(context,"Login_txt_reg_2"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
                 SizedBox(height: 20,),
               ],
             ),

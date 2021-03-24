@@ -74,8 +74,8 @@ class _introductionScreenState extends State<introductionScreen> {
                         ):Container(),
                         SizedBox(height: 20,),
                         Container(
-                          width: 230,
-                          height: 230,
+                          width: 295,
+                          height: 259.64,
                           child: Image.asset(
                             introductionData[storyIndex].photo_dir.toString(),
                             fit: BoxFit.cover,
@@ -92,26 +92,31 @@ class _introductionScreenState extends State<introductionScreen> {
                                   color: Colors.black,
                                 ),
                                 children: <TextSpan>[
-                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P1")),
-                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P2"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 26)),
-                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P3")),
-                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P4"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 26)),
+                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P1",),style: TextStyle(fontFamily: 'Arabic')),
+                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P2"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 26)),
+                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P3"),style: TextStyle(fontFamily: 'Arabic')),
+                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P4"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 26)),
                                 ],
                               ),
                         )):Container(
                           margin: EdgeInsets.symmetric(vertical: 5,horizontal: 50),
-                          child: Text(introductionData[storyIndex].text1.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 12),),
+                          child: Text(introductionData[storyIndex].text1.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 13),),
                         ),
-                        Container(
+                       storyIndex!=0? Container(
                             margin: EdgeInsets.symmetric(vertical: 0,horizontal: 50),
                             child: storyIndex%2==0 ? Text(introductionData[storyIndex].text2.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 24,fontWeight:FontWeight.bold,color:Config.app_backgroungColor))
-                                : Text(introductionData[storyIndex].text2.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 22,color:Colors.black),)
-                        ),
-                        SizedBox(height: 10,),
+                                : Text(introductionData[storyIndex].text2.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 24,color:Colors.black),)
+                        ):Container(),
+                        storyIndex!=0?SizedBox(height: 10,):Container(),
                         Container(
-                            margin: EdgeInsets.symmetric(vertical: 5,horizontal: 50),
-                            child: Text(introductionData[storyIndex].text3.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16),)
+                            margin: EdgeInsets.symmetric(vertical: 5,horizontal: 20),
+                            child: Text(introductionData[storyIndex].text3.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 17),)
                         ),
+
+                        storyIndex==0?Container(
+                            margin: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                            child: Text(_config.get_text(context, "intro_txt_sc1_3"),textAlign: TextAlign.center,style: TextStyle(fontSize: 17),)
+                        ):Container(),
 
                         storyIndex==introductionData.length-1 ?Container(
                           margin: EdgeInsets.symmetric(vertical: 5,horizontal: 50),
@@ -119,8 +124,8 @@ class _introductionScreenState extends State<introductionScreen> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(_config.get_text(context,"intro_txt_sc9_4").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16),),
-                              Text(_config.get_text(context,"intro_txt_sc9_5"),textAlign: TextAlign.center,style: TextStyle(fontSize: 16),),
+                              Text(_config.get_text(context,"intro_txt_sc9_4").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 17),),
+                              Text(_config.get_text(context,"intro_txt_sc9_5"),textAlign: TextAlign.center,style: TextStyle(fontSize: 17),),
                             ],
                           ),
                         ) :Container(),

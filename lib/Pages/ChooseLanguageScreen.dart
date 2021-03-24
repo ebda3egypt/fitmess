@@ -8,8 +8,8 @@ import 'package:flutter/services.dart';
 import 'introductionScreen.dart';
 
 class ChooseLanguageScreen extends StatelessWidget {
-  Color ar_bu_color=Colors.grey[200],ar_text_color=Colors.black,word_color_ar= Colors.black;
-  Color en_bu_color = Colors.grey[200],en_text_color=Colors.black;
+  Color ar_bu_color=Color(int.parse("FFEDF7FC",radix: 16)),ar_text_color=Colors.black,word_color_ar= Colors.black;
+  Color en_bu_color = Color(int.parse("FFEDF7FC",radix: 16)),en_text_color=Colors.black;
   LanguageEnum SelectedLang = LanguageEnum.none;
 
 
@@ -38,12 +38,14 @@ class ChooseLanguageScreen extends StatelessWidget {
                     child: Image.asset(
                       "assets/drawables/chooseLanguage.png",
                       fit: BoxFit.cover,
+                      width: 313.44,
+                      height: 257.17,
                     ),
                   ),
                   SizedBox(height: 20,),
                   Container(
 
-                      child: Text(get_translated(context,"chooseLanText"),textAlign: TextAlign.center,style: TextStyle(fontSize: 30,fontWeight:FontWeight.bold,color:Colors.black))
+                      child: Text(get_translated(context,"chooseLanText"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32,fontWeight:FontWeight.bold,color:Colors.black))
                   ),
                   SizedBox(height: 20,),
                   
@@ -54,14 +56,14 @@ class ChooseLanguageScreen extends StatelessWidget {
                             onTap: (){
                               setState(() {
                                 if(SelectedLang == LanguageEnum.en){
-                                  en_bu_color = Colors.grey[200];
+                                  en_bu_color = Color(int.parse("FFEDF7FC",radix: 16));
                                   en_text_color=Colors.black;
                                   SelectedLang=LanguageEnum.none;
                                 }
                                 else{
                                   en_bu_color=Config.app_backgroungColor;
                                   en_text_color=Colors.white;
-                                  ar_bu_color=Colors.grey[200];
+                                  ar_bu_color=Color(int.parse("FFEDF7FC",radix: 16));
                                   ar_text_color=Colors.black;
                                   SelectedLang=LanguageEnum.en;
                                 }
@@ -76,14 +78,14 @@ class ChooseLanguageScreen extends StatelessWidget {
                             onTap: (){
                               setState(() {
                                 if(SelectedLang == LanguageEnum.ar){
-                                  ar_bu_color=Colors.grey[200];
+                                  ar_bu_color=Color(int.parse("FFEDF7FC",radix: 16));
                                   ar_text_color=Colors.black;
                                   SelectedLang=LanguageEnum.none;
                                 }
                                 else{
                                   ar_bu_color=Config.app_backgroungColor;
                                   ar_text_color=Colors.white;
-                                  en_bu_color = Colors.grey[200];
+                                  en_bu_color = Color(int.parse("FFEDF7FC",radix: 16));
                                   en_text_color=Colors.black;
                                   SelectedLang=LanguageEnum.ar;
                                 }
@@ -95,7 +97,7 @@ class ChooseLanguageScreen extends StatelessWidget {
                     );
                   }),
 
-                  SizedBox(height: 20,),
+                  SizedBox(height: 40,),
                   GestureDetector(
 
                     onTap: (){

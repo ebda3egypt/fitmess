@@ -33,7 +33,7 @@ class RegisterScreenClass extends StatelessWidget {
   TextEditingController _emailController=new TextEditingController();
   TextEditingController _passwordController=new TextEditingController();
   Config _config = Config();
-  Color bt_color = Colors.grey[300],bt_txt_color = Colors.grey[600];
+  Color bt_color = Colors.grey[200],bt_txt_color = Colors.grey[600];
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   ServiceEnum serviceEnum = ServiceEnum.start;
 
@@ -93,7 +93,7 @@ class RegisterScreenClass extends StatelessWidget {
                     children: [
                       Container(
                           width: double.infinity,
-                          child: Text(_config.get_text(context, "Register_signup_txt"), textAlign: TextAlign.center, style: TextStyle(fontSize: 35),)),
+                          child: Text(_config.get_text(context, "Register_signup_txt"), textAlign: TextAlign.center, style: TextStyle(fontSize: 32),)),
 
                       SizedBox(height: 50,),
 
@@ -109,7 +109,7 @@ class RegisterScreenClass extends StatelessWidget {
                               children: [
                                 Text(_config.get_text(context, "Register_fname_txt"),
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 14),),
+                                  style: TextStyle(fontSize: 15),),
                                 SizedBox(height: 10,),
                                 Container(
                                   margin: EdgeInsets.symmetric(horizontal: 5),
@@ -119,6 +119,7 @@ class RegisterScreenClass extends StatelessWidget {
                                     border: Border.all(color:Colors.grey[400],width: 1),
                                   ),
                                   child: TextFormField(
+                                    style: TextStyle(fontSize: 15,color: Colors.black),
                                     decoration: InputDecoration.collapsed(
                                       hintText: _config.get_text(context, "Register_enter_name_txt"),
                                     ),
@@ -153,7 +154,7 @@ class RegisterScreenClass extends StatelessWidget {
                               children: [
                                 Text(_config.get_text(context, "Register_lname_txt"),
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 14),),
+                                  style: TextStyle(fontSize: 15),),
                                 SizedBox(height: 10,),
                                 Container(
                                   margin: EdgeInsets.symmetric(horizontal: 5),
@@ -163,6 +164,7 @@ class RegisterScreenClass extends StatelessWidget {
                                     border: Border.all(color:Colors.grey[400],width: 1),
                                   ),
                                   child: TextFormField(
+                                   style: TextStyle(fontSize: 15,color: Colors.black),
                                     decoration: InputDecoration.collapsed(
                                       hintText:_config.get_text(context, "Register_enter_name_txt"),
                                       /*  filled: true,
@@ -202,7 +204,7 @@ class RegisterScreenClass extends StatelessWidget {
                         children: [
                           Text(_config.get_text(context, "Register_email_txt"),
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 14),),
+                            style: TextStyle(fontSize: 15),),
                           SizedBox(height: 10,),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5),
@@ -212,6 +214,7 @@ class RegisterScreenClass extends StatelessWidget {
                               border: Border.all(color:Colors.grey[400],width: 1),
                             ),
                             child: TextFormField(
+                             style: TextStyle(fontSize: 15,color: Colors.black),
                               decoration: InputDecoration.collapsed(
                                 hintText: _config.get_text(context, "Register_enter_email_txt"),
                               ),
@@ -246,7 +249,7 @@ class RegisterScreenClass extends StatelessWidget {
                         children: [
                           Text( _config.get_text(context, "Register_password_txt"),
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 14),),
+                            style: TextStyle(fontSize: 15),),
                           SizedBox(height: 10,),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5),
@@ -256,6 +259,7 @@ class RegisterScreenClass extends StatelessWidget {
                               border: Border.all(color:Colors.grey[400],width: 1),
                             ),
                             child: TextFormField(
+                             style: TextStyle(fontSize: 15,color: Colors.black),
                               decoration: InputDecoration.collapsed(
                                 hintText: _config.get_text(context, "Register_enter_password_txt"),
                               ),
