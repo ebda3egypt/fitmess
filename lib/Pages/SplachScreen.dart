@@ -4,6 +4,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:fitmess/Pages/ChooseLanguageScreen.dart';
 import 'package:fitmess/Pages/introductionScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:fitmess/Helpers/Config.dart';
 
 class SplachScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class SplachScreen extends StatefulWidget {
 class _SplachScreenState extends State<SplachScreen> {
   Color background_color = Colors.white;
   String app_logo = "assets/drawables/logo_blue.png";
-  Color activeDots = Colors.white , Dotscolor = Colors.blueAccent;
+  Color activeDots = Colors.white , Dotscolor = Config.app_backgroungColor;
   double num_position =0.0;
   @override
   void initState() {
@@ -35,9 +36,9 @@ class _SplachScreenState extends State<SplachScreen> {
 
   void changeSplach(){
     setState(() {
-       background_color = Colors.blue;
+       background_color = Config.app_backgroungColor;
        app_logo = "assets/drawables/logo_white.png";
-       activeDots =Colors.blueAccent ;
+       activeDots =Config.app_backgroungColor;
        Dotscolor = Colors.white;
     });
     Timer(Duration(seconds: 3), () => Navigator.of(context).pushReplacement(MaterialPageRoute(

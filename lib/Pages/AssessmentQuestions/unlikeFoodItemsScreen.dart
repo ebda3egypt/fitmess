@@ -18,7 +18,7 @@ class unlikeFoodItemsScreen extends StatefulWidget {
 
 class _unlikeFoodItemsScreenState extends State<unlikeFoodItemsScreen> {
   Config _config = Config();
-  Color bu_color =Colors.grey[300] , bu_text_color = Colors.grey[600] ;
+  Color bu_color =Color(int.parse("FFEDF7FC",radix: 16)) , bu_text_color = Colors.black ;
 
 
   String hintText = "";
@@ -35,12 +35,12 @@ class _unlikeFoodItemsScreenState extends State<unlikeFoodItemsScreen> {
   void changeColor(){
     if(SelectedDays.length==0){
       is_Completed = false;
-      bu_color = Colors.grey[300];
-      bu_text_color = Colors.grey[600];
+      bu_color = Color(int.parse("FFEDF7FC",radix: 16));
+      bu_text_color = Colors.black;
     }
     else{
       is_Completed = true;
-      bu_color = Colors.blue;
+      bu_color = Config.app_backgroungColor;
       bu_text_color = Colors.white;
     }
 
@@ -53,23 +53,23 @@ class _unlikeFoodItemsScreenState extends State<unlikeFoodItemsScreen> {
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
-    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Colors.grey[200]));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(AssessmentFoodItem(_config.get_text(context, "test1"),"",Color(int.parse("FFEDF7FC",radix: 16))));
   }
 
   @override
@@ -109,7 +109,19 @@ class _unlikeFoodItemsScreenState extends State<unlikeFoodItemsScreen> {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline4_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                          Row(
+                            children: [
+                              Text(_config.get_text(
+                                  context, "assessment_headline4_txt").toString(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 16,
+                                      color: Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(7/7)", textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.black)),
+                            ],
+                          )
 
 
                         ],
@@ -117,11 +129,11 @@ class _unlikeFoodItemsScreenState extends State<unlikeFoodItemsScreen> {
                       ),
                       SizedBox(height: 40,),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 40),
                         child: Container(
                           width: double.infinity,
                           child: Center(
-                            child:Text(_config.get_text(context, "unLikeFood_headline"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                            child:Text(_config.get_text(context, "unLikeFood_headline"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                           ),
                         ),
                       ),
@@ -141,13 +153,13 @@ class _unlikeFoodItemsScreenState extends State<unlikeFoodItemsScreen> {
                                   onTap: (){
                                     if(SelectedDays.contains(numOfDays[index]))
                                     {
-                                      numOfDays[index].border_color = Colors.grey[200];
+                                      numOfDays[index].border_color = Color(int.parse("FFEDF7FC",radix: 16));
                                       SelectedDays.remove(numOfDays[index]);
 
                                     }
                                     else
                                     {
-                                      numOfDays[index].border_color = Colors.blue;
+                                      numOfDays[index].border_color = Config.app_backgroungColor;
                                       SelectedDays.add(numOfDays[index]);
                                     }
                                     changeColor();
@@ -159,7 +171,7 @@ class _unlikeFoodItemsScreenState extends State<unlikeFoodItemsScreen> {
                                       Container(
                                         padding: EdgeInsets.symmetric(horizontal: 50,vertical: 50),
                                         decoration: BoxDecoration(
-                                          color: Colors.grey[200],
+                                          color: Color(int.parse("FFEDF7FC",radix: 16)),
                                           border: Border.all(color:numOfDays[index].border_color ),
                                           shape: BoxShape.circle,
                                         ),
@@ -189,7 +201,7 @@ class _unlikeFoodItemsScreenState extends State<unlikeFoodItemsScreen> {
                           },
                           child: Container(
 
-                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 50),
+                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 20),
                               child: LanguageSubmitButton(bu_text: _config.get_text(context,"submit_assess_text").toString(),bu_color: bu_color ,textColor: bu_text_color,))),
 
 

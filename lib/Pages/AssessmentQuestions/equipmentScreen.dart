@@ -19,7 +19,7 @@ class equipmentScreen extends StatefulWidget {
 
 class _equipmentScreenState extends State<equipmentScreen> {
   Config _config = Config();
-  Color bu_color =Colors.grey[300] , bu_text_color = Colors.grey[600] ;
+  Color bu_color =Color(int.parse("FFEDF7FC",radix: 16)) , bu_text_color = Colors.grey[600] ;
 
 
   String hintText = "";
@@ -36,12 +36,12 @@ class _equipmentScreenState extends State<equipmentScreen> {
   void changeColor(){
     if(SelectedDays.length==0){
       is_Completed = false;
-      bu_color = Colors.grey[300];
+      bu_color = Color(int.parse("FFEDF7FC",radix: 16));
       bu_text_color = Colors.grey[600];
     }
     else{
       is_Completed = true;
-      bu_color = Colors.blue;
+      bu_color = Config.app_backgroungColor;
       bu_text_color = Colors.white;
     }
 
@@ -54,10 +54,10 @@ class _equipmentScreenState extends State<equipmentScreen> {
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    numOfDays.add(EquipmentModel(_config.get_text(context, "equipment_txt_1"),"assets/drawables/ic_dumbbeles.png",Colors.grey[100]));
-    numOfDays.add(EquipmentModel(_config.get_text(context, "equipment_txt_2"),"assets/drawables/ic_pullUp.png",Colors.grey[100]));
-    numOfDays.add(EquipmentModel(_config.get_text(context, "equipment_txt_3"),"assets/drawables/ic_other.png",Colors.grey[100]));
-    numOfDays.add(EquipmentModel(_config.get_text(context, "equipment_txt_4"),"assets/drawables/ic_noEq.png",Colors.grey[100]));
+    numOfDays.add(EquipmentModel(_config.get_text(context, "equipment_txt_1"),"assets/drawables/ic_dumbbeles.png",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(EquipmentModel(_config.get_text(context, "equipment_txt_2"),"assets/drawables/ic_pullUp.png",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(EquipmentModel(_config.get_text(context, "equipment_txt_3"),"assets/drawables/ic_other.png",Color(int.parse("FFEDF7FC",radix: 16))));
+    numOfDays.add(EquipmentModel(_config.get_text(context, "equipment_txt_4"),"assets/drawables/ic_noEq.png",Color(int.parse("FFEDF7FC",radix: 16))));
   }
 
   @override
@@ -98,7 +98,19 @@ class _equipmentScreenState extends State<equipmentScreen> {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline4_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                          Row(
+                            children: [
+                              Text(_config.get_text(
+                                  context, "assessment_headline4_txt").toString(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 15,
+                                      color: Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(5/7)", textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.black)),
+                            ],
+                          )
 
 
                         ],
@@ -106,11 +118,11 @@ class _equipmentScreenState extends State<equipmentScreen> {
                       ),
                       SizedBox(height: 40,),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 40),
                         child: Container(
                           width: double.infinity,
                           child: Center(
-                            child:Text(_config.get_text(context, "equipment_txt_headline"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                            child:Text(_config.get_text(context, "equipment_txt_headline"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                           ),
                         ),
                       ),
@@ -128,13 +140,13 @@ class _equipmentScreenState extends State<equipmentScreen> {
                                   onTap: (){
                                     if(SelectedDays.contains(numOfDays[index]))
                                     {
-                                      numOfDays[index].borderColor = Colors.grey[100];
+                                      numOfDays[index].borderColor = Color(int.parse("FFEDF7FC",radix: 16));
                                       SelectedDays.remove(numOfDays[index]);
 
                                     }
                                     else
                                     {
-                                      numOfDays[index].borderColor = Colors.blue;
+                                      numOfDays[index].borderColor = Config.app_backgroungColor;
                                       SelectedDays.add(numOfDays[index]);
                                     }
 
@@ -145,7 +157,7 @@ class _equipmentScreenState extends State<equipmentScreen> {
                                   child: Container(
                                     padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
                                     decoration: BoxDecoration(
-                                      color: Colors.grey[100],
+                                      color: Color(int.parse("FFEDF7FC",radix: 16)),
                                       border: Border.all(color: numOfDays[index].borderColor),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
@@ -156,7 +168,7 @@ class _equipmentScreenState extends State<equipmentScreen> {
                                       children: [
                                         Image.asset(numOfDays[index].photoURL.toString(),width: 100,height: 100,) ,
                                         SizedBox(height: 10,),
-                                        Text(numOfDays[index].name.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black ),)
+                                        Text(numOfDays[index].name.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 15,color:Colors.black ),)
 
                                       ],
                                     ),
@@ -185,7 +197,7 @@ class _equipmentScreenState extends State<equipmentScreen> {
                           },
                           child: Container(
 
-                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 50),
+                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 20),
                               child: LanguageSubmitButton(bu_text: _config.get_text(context,"assessment_continue_txt").toString(),bu_color: bu_color ,textColor: bu_text_color,))),
 
 

@@ -50,8 +50,8 @@ class _AssessmentDoneScreenState extends State<AssessmentDoneScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.width-100,
-                      height: 250,
+                      width: 336,
+                      height: 339,
                       child: Image.asset(
                         "assets/drawables/img_done.png",
                         fit: BoxFit.cover,
@@ -61,13 +61,13 @@ class _AssessmentDoneScreenState extends State<AssessmentDoneScreen> {
 
                     Container(
                         margin: EdgeInsets.symmetric(vertical: 0,horizontal: 40),
-                        child:Text(_config.get_text(context,"assessment_done_text").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 30,color:Colors.black))
+                        child:Text(_config.get_text(context,"assessment_done_text").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 32,color:Colors.black))
 
                     ),
                     SizedBox(height: 40,),
                     Container(
                         margin: EdgeInsets.symmetric(vertical: 0,horizontal: 40),
-                        child:Text(_config.get_text(context,"assessment_done_text2").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 14,color:Colors.black))
+                        child:Text(_config.get_text(context,"assessment_done_text2").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 15,color:Colors.black))
 
                     ),
                     SizedBox(height: 30,),

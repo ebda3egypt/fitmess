@@ -154,7 +154,7 @@ class LoginScreenClass extends StatelessWidget {
 
                       }
                     },
-                    child: LanguageSubmitButton(bu_text: _config.get_text(context,"check_phone_button_text"),bu_color: Colors.blue[800],textColor: Colors.white,)),
+                    child: LanguageSubmitButton(bu_text: _config.get_text(context,"check_phone_button_text"),bu_color: Config.app_backgroungColor,textColor: Colors.white,)),
 
 
                 SizedBox(height: 20,),

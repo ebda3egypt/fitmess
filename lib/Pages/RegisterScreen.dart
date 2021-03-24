@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fitmess/Widgets/LanguageSubmitButton.dart';
 import 'package:provider/provider.dart';
 import 'package:fitmess/Pages/WelcomeScreen.dart';
-
+import 'dart:async';
 
 
 class RegisterScreen extends StatelessWidget {
@@ -61,10 +61,10 @@ class RegisterScreenClass extends StatelessWidget {
     serviceEnum = context.watch<registerViewModel>().r_Condition;
 
     if(serviceEnum == ServiceEnum.successfullyLoaded){
-      _scaffoldKey.currentState.showSnackBar(new SnackBar(content: new Text(
+    /*  _scaffoldKey.currentState.showSnackBar(new SnackBar(content: new Text(
         "done", textAlign: TextAlign.right,
-        style: TextStyle(fontFamily: 'Arabic'),)));
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        style: TextStyle(fontFamily: 'Arabic'),)));*/
+      Navigator.of(context).push(MaterialPageRoute(
           builder: (BuildContext context) => WelcomeScreen()));
 
 
@@ -124,7 +124,7 @@ class RegisterScreenClass extends StatelessWidget {
                                     ),
                                     onChanged: (v){
                                       if(checkFills()){
-                                        bt_color = Colors.blue;
+                                        bt_color = Config.app_backgroungColor;
                                         bt_txt_color= Colors.white;
                                         setState(() {});
                                       }
@@ -173,7 +173,7 @@ class RegisterScreenClass extends StatelessWidget {
                                     autocorrect: false,
                                     onChanged: (v){
                                       if(checkFills()){
-                                        bt_color = Colors.blue;
+                                        bt_color = Config.app_backgroungColor;
                                         bt_txt_color= Colors.white;
                                         setState(() {});
                                       }
@@ -221,7 +221,7 @@ class RegisterScreenClass extends StatelessWidget {
                               onChanged: (v){
 
                                 if(checkFills()){
-                                  bt_color = Colors.blue;
+                                  bt_color = Config.app_backgroungColor;
                                   bt_txt_color= Colors.white;
                                   setState(() {});
                                 }
@@ -265,7 +265,7 @@ class RegisterScreenClass extends StatelessWidget {
                               autocorrect: false,
                               onChanged: (v){
                                 if(checkFills()){
-                                  bt_color = Colors.blue;
+                                  bt_color = Config.app_backgroungColor;
                                   bt_txt_color= Colors.white;
                                   setState(() {});
                                 }
@@ -273,7 +273,7 @@ class RegisterScreenClass extends StatelessWidget {
                               onEditingComplete: (){
                                 print("onnn${checkFills().toString()}");
                                 if(checkFills()){
-                                  bt_color = Colors.blue;
+                                  bt_color = Config.app_backgroungColor;
                                   bt_txt_color= Colors.white;
                                   setState(() {});
                                   print('hello 1');
@@ -302,9 +302,12 @@ class RegisterScreenClass extends StatelessWidget {
                           onTap: ()async{
                             //bool t = checkFills();
                             if (_key.currentState.validate()) {
-                              await Provider.of<registerViewModel>(context, listen: false).registerNewUser(jsonEmailPasswordModel,
+                            /*  await Provider.of<registerViewModel>(context, listen: false).registerNewUser(jsonEmailPasswordModel,
                                 _firstnameController.text.toString(),_lastnameController.text.toString(),_emailController.text.toString(),_passwordController.text.toString());
+*/
 
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                  builder: (BuildContext context) => WelcomeScreen()));
                             }
                             else{
                               print("f");

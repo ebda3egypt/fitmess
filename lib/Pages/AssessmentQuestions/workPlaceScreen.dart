@@ -49,7 +49,19 @@ class workPlaceScreen extends StatelessWidget {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline4_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                          Row(
+                            children: [
+                              Text(_config.get_text(
+                                  context, "assessment_headline4_txt").toString(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 16,
+                                      color: Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(4/7)", textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.black)),
+                            ],
+                          )
 
 
                         ],
@@ -57,10 +69,10 @@ class workPlaceScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 40,),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        margin: EdgeInsets.symmetric(horizontal: 30),
                         width: double.infinity,
                         child: Center(
-                          child:Text(_config.get_text(context, "workout_ar_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                          child:Text(_config.get_text(context, "workout_ar_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                         ),
                       ),
                       SizedBox(height: 40,),
@@ -86,7 +98,7 @@ class workPlaceScreen extends StatelessWidget {
                               },
                               child: Container(
                                 height: 170,
-                                color: Colors.grey[100],
+                                color: Color(int.parse("FFEDF7FC",radix: 16)),
                                 padding: EdgeInsets.only(top: 20,bottom: 20,),
                                 margin: EdgeInsets.symmetric(horizontal: 10),
                                 child:Column(
@@ -95,7 +107,7 @@ class workPlaceScreen extends StatelessWidget {
                                   children: [
                                     Image.asset("assets/drawables/ic_home.png") ,
                                     SizedBox(height: 20,),
-                                    Text(_config.get_text(context, "home_txt"),style: TextStyle(fontSize: 16),textAlign: TextAlign.center,),
+                                    Text(_config.get_text(context, "home_txt"),style: TextStyle(fontSize: 15),textAlign: TextAlign.center,),
                                   ],
                                 ) ,
                               ),
@@ -120,7 +132,7 @@ class workPlaceScreen extends StatelessWidget {
                               },
                               child:Container(
                                 height: 170,
-                                color: Colors.grey[100],
+                                color: Color(int.parse("FFEDF7FC",radix: 16)),
                                 padding: EdgeInsets.only(top: 20,bottom: 20),
                                 margin: EdgeInsets.symmetric(horizontal: 10),
                                 child:Center(
@@ -130,7 +142,7 @@ class workPlaceScreen extends StatelessWidget {
                                     children: [
                                       Image.asset("assets/drawables/ic_gym.png") ,
                                       SizedBox(height: 20,),
-                                      Text(_config.get_text(context, "gym_txt"),style: TextStyle(fontSize: 16),textAlign: TextAlign.center,),
+                                      Text(_config.get_text(context, "gym_txt"),style: TextStyle(fontSize: 15),textAlign: TextAlign.center,),
                                     ],
                                   ) ,
                                 ) ,

@@ -18,7 +18,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
   Config _config = Config();
   Color bu_color =Colors.grey[300] , bu_text_color = Colors.grey[600] ;
   Color bu_color_amrican =Colors.grey[300] , bu_text_color_american = Colors.grey[600] ;
-  Color bu_color_universal =Colors.blue , bu_text_color_universal = Colors.white ;
+  Color bu_color_universal =Config.app_backgroungColor , bu_text_color_universal = Colors.white ;
 
   String hintText = "",hintText2="";
 
@@ -39,13 +39,13 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
       isAmerican = false;
       bu_color_amrican = Colors.grey[300];
       bu_text_color_american = Colors.grey[600];
-      bu_color_universal = Colors.blue;
+      bu_color_universal = Config.app_backgroungColor;
       bu_text_color_universal = Colors.white;
       hintText= _config.get_text(context,"height_universal_unit_txt").toString();
     }
     else{
       isAmerican = true;
-      bu_color_amrican = Colors.blue;
+      bu_color_amrican = Config.app_backgroungColor;
       bu_text_color_american = Colors.white;
       bu_color_universal = Colors.grey[300];
       bu_text_color_universal = Colors.grey[600];
@@ -57,7 +57,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
 
   void changeColor(){
     is_Completed = true;
-    bu_color = Colors.blue;
+    bu_color = Config.app_backgroungColor;
     bu_text_color = Colors.white;
     setState(() {});
   }
@@ -110,7 +110,13 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline1_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                          Row(
+                            children: [
+                              Text(_config.get_text(context,"assessment_headline1_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(3/3)",textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black)),
+                            ],
+                          )
 
 
                         ],
@@ -135,14 +141,14 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  width: 50,
+                                  width: 80,
                                   height: 70,
                                   child: TextFormField(
                                     focusNode: firstFocus,
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 3,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: '000',counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
@@ -156,14 +162,14 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
 
 
                                 Container(
-                                  width: 50,
+                                  width: 80,
                                   height: 70,
                                   child: TextFormField(
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
                                     enabled: false,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: hintText,counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
@@ -173,7 +179,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                                 ),
 
                                 isAmerican? Container(
-                                  width: 50,
+                                  width: 80,
                                   height: 70,
                                   child: TextFormField(
                                     focusNode: secondFocus,
@@ -181,7 +187,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                                     autofocus: true,
                                     maxLength: 1,
                                     enabled: true,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: "000",counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
@@ -192,14 +198,14 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                                 ):Container(),
 
                                 isAmerican? Container(
-                                  width: 50,
+                                  width: 80,
                                   height: 70,
                                   child: TextFormField(
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
                                     enabled: false,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: hintText2,counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
@@ -258,7 +264,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                                 builder: (BuildContext context) => HomePage()));*/
                           },
                           child: Container(
-                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 50),
+                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 20),
                               child: LanguageSubmitButton(bu_text: _config.get_text(context,"assessment_continue_txt").toString(),bu_color: bu_color ,textColor: bu_text_color,))),
 
 

@@ -31,7 +31,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
 
   void changeColor(){
     is_Completed = true;
-    bu_color = Colors.blue;
+    bu_color = Config.app_backgroungColor;
     bu_text_color = Colors.white;
     setState(() {});
   }
@@ -76,7 +76,13 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline1_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                          Row(
+                            children: [
+                              Text(_config.get_text(context,"assessment_headline1_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(1/3)",textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Config.app_backgroungColor)),
+                            ],
+                          )
 
 
                         ],
@@ -113,7 +119,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
-                                    style: TextStyle(fontSize: 32),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: 'D',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
@@ -130,7 +136,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                   height: 60,
                                   child: TextFormField(
                                     focusNode: secondFocus,
-                                    style: TextStyle(fontSize: 32),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     maxLength: 1,
                                     decoration: InputDecoration(hintText: 'D',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
@@ -171,7 +177,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
-                                    style: TextStyle(fontSize: 32),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: 'M',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
@@ -190,9 +196,9 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                   height: 60,
                                   child: TextFormField(
                                     focusNode: forthFocus,
-                                    style: TextStyle(fontSize: 32),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     maxLength: 1,
-                                    decoration: InputDecoration(hintText: 'M',counterText: "",border: InputBorder.none,),
+                                    decoration: InputDecoration(hintText: 'M',counterText: "",border: InputBorder.none),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
                                       if(t.length==1){
@@ -232,7 +238,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 1,
-                                    style: TextStyle(fontSize: 32),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
@@ -252,7 +258,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                   height: 60,
                                   child: TextFormField(
                                     focusNode: sixthFocus,
-                                    style: TextStyle(fontSize: 32),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     maxLength: 1,
                                     decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
@@ -273,7 +279,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                   height: 60,
                                   child: TextFormField(
                                     focusNode: seventhFocus,
-                                    style: TextStyle(fontSize: 32),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     maxLength: 1,
                                     decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
@@ -294,7 +300,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                   height: 60,
                                   child: TextFormField(
                                     focusNode: eighthFocus,
-                                    style: TextStyle(fontSize: 32),
+                                    style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     maxLength: 1,
                                     decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
@@ -315,7 +321,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                           )
 
                       ),
-                      SizedBox(height: 50,),
+                      SizedBox(height: 100,),
 
                       GestureDetector(
                           onTap: (){
@@ -333,7 +339,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                 builder: (BuildContext context) => HomePage()));*/
                           },
                           child: Container(
-                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 50),
+                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 20),
                               child: LanguageSubmitButton(bu_text: _config.get_text(context,"assessment_continue_txt").toString(),bu_color: bu_color ,textColor: bu_text_color,))),
 
 

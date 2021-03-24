@@ -115,7 +115,7 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                       TextSpan(
                           text: _config.get_text(context, "verify_phone_txt5"),
                           style: new TextStyle(fontWeight: FontWeight.bold,
-                              color: Colors.blue,
+                              color: Config.app_backgroungColor,
                               fontSize: 15)),
                     ],
                   ),
@@ -136,7 +136,7 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                     activeFillColor: Colors.white,
                     inactiveColor: Colors.grey[400],
                     inactiveFillColor: Colors.white,
-                    selectedColor: Colors.blue,
+                    selectedColor: Config.app_backgroungColor,
                     selectedFillColor: Colors.white,
                   ),
                   animationDuration: Duration(milliseconds: 200),
@@ -178,7 +178,7 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(text: _config.get_text(context, "verify_phone_txt6")),
 
-                        TextSpan(text: _config.get_text(context, "verify_phone_txt7"), style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 15)),
+                        TextSpan(text: _config.get_text(context, "verify_phone_txt7"), style: new TextStyle(fontWeight: FontWeight.bold, color: Config.app_backgroungColor, fontSize: 15)),
                       ],
                     ),
                   ),
@@ -196,7 +196,7 @@ class VerifyPhoneNumberScreenClass extends StatelessWidget {
                       controller: controller,
                       seconds: 900,
                       build: (_, double time) =>
-                          Text(format(Duration(seconds:time.round())).toString(), style: TextStyle(fontSize: 15, color: Colors.blue,),
+                          Text(format(Duration(seconds:time.round())).toString(), style: TextStyle(fontSize: 15, color: Config.app_backgroungColor,),
                           ),
                       interval: Duration(seconds: 1),
                       onFinished: () {

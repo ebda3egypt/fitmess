@@ -59,7 +59,7 @@ class ChooseLanguageScreen extends StatelessWidget {
                                   SelectedLang=LanguageEnum.none;
                                 }
                                 else{
-                                  en_bu_color=Colors.blue[800];
+                                  en_bu_color=Config.app_backgroungColor;
                                   en_text_color=Colors.white;
                                   ar_bu_color=Colors.grey[200];
                                   ar_text_color=Colors.black;
@@ -81,7 +81,7 @@ class ChooseLanguageScreen extends StatelessWidget {
                                   SelectedLang=LanguageEnum.none;
                                 }
                                 else{
-                                  ar_bu_color=Colors.blue[800];
+                                  ar_bu_color=Config.app_backgroungColor;
                                   ar_text_color=Colors.white;
                                   en_bu_color = Colors.grey[200];
                                   en_text_color=Colors.black;
@@ -115,7 +115,7 @@ class ChooseLanguageScreen extends StatelessWidget {
                       }
 
                     },
-                      child: LanguageSubmitButton(bu_text:confirmText,bu_color: Colors.blue[800],textColor: Colors.white,)),
+                      child: LanguageSubmitButton(bu_text:confirmText,bu_color: Config.app_backgroungColor,textColor: Colors.white,)),
                 ],
               ),
             ),

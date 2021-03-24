@@ -32,7 +32,7 @@ class registerViewModel extends ChangeNotifier {
       notifyListeners();
     }
     print("rCondition      :   ${r_Condition.toString()}");
-    notifyListeners();
+    //notifyListeners();
   }
 }
 

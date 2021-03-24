@@ -5,8 +5,20 @@ import 'package:fitmess/Widgets/LanguageSubmitButton.dart';
 import 'package:fitmess/Pages/HomePage.dart';
 import 'package:flutter/services.dart';
 import 'package:fitmess/Pages/AssessmentQuestions/birthdayQuestionScreen.dart';
+import 'package:provider/provider.dart';
+import 'package:fitmess/ViewModels/registerViewModel.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider<registerViewModel>(
+      create: (context)=>registerViewModel(),
+      child:WelcomeScreenClass() ,
+    );
+  }
+}
+
+class WelcomeScreenClass extends StatelessWidget {
 
   Config _config = Config();
   @override
@@ -73,7 +85,7 @@ class WelcomeScreen extends StatelessWidget {
                         },
                         child: Container(
                           margin:EdgeInsets.symmetric(vertical: 5,horizontal: 100),
-                            child: LanguageSubmitButton(bu_text: _config.get_text(context,"welcom_bu_txt").toString(),bu_color: Colors.blue[800],textColor: Colors.white,))),
+                            child: LanguageSubmitButton(bu_text: _config.get_text(context,"welcom_bu_txt").toString(),bu_color: Config.app_backgroungColor,textColor: Colors.white,))),
 
 
                     SizedBox(height: 20,),

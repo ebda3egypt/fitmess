@@ -93,9 +93,9 @@ class _introductionScreenState extends State<introductionScreen> {
                                 ),
                                 children: <TextSpan>[
                                   TextSpan(text: _config.get_text(context,"intro_txt_sc1_P1")),
-                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P2"), style: new TextStyle(fontWeight: FontWeight.bold,color: Colors.blue,fontSize: 26)),
+                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P2"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 26)),
                                   TextSpan(text: _config.get_text(context,"intro_txt_sc1_P3")),
-                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P4"), style: new TextStyle(fontWeight: FontWeight.bold,color: Colors.blue,fontSize: 26)),
+                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P4"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 26)),
                                 ],
                               ),
                         )):Container(
@@ -104,7 +104,7 @@ class _introductionScreenState extends State<introductionScreen> {
                         ),
                         Container(
                             margin: EdgeInsets.symmetric(vertical: 0,horizontal: 50),
-                            child: storyIndex%2==0 ? Text(introductionData[storyIndex].text2.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 24,fontWeight:FontWeight.bold,color:Colors.blue))
+                            child: storyIndex%2==0 ? Text(introductionData[storyIndex].text2.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 24,fontWeight:FontWeight.bold,color:Config.app_backgroungColor))
                                 : Text(introductionData[storyIndex].text2.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 22,color:Colors.black),)
                         ),
                         SizedBox(height: 10,),

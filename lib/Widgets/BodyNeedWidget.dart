@@ -23,7 +23,7 @@ class BodyNeedWidget extends StatelessWidget {
         children: [
           Expanded(
             flex: 1,
-            child: Image.asset(b_photo),
+            child: Image.asset(b_photo,width: 55,height: 55,),
           ),
           Expanded(
             flex: 1,
@@ -31,13 +31,13 @@ class BodyNeedWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(_config.get_text(context,b_text).toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.grey[400])),
+                Text(_config.get_text(context,b_text).toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 13,color:Colors.grey[400])),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(b_amout,textAlign: TextAlign.start,style: TextStyle(fontSize: 14,color:Colors.grey[800])),
+                    Text(b_amout,textAlign: TextAlign.start,style: TextStyle(fontSize: 17,color:Colors.black)),
                     SizedBox(width: 5,),
-                    Text(_config.get_text(context,b_unit).toString(),textAlign: TextAlign.start,style: TextStyle(fontSize: 14,color:Colors.grey[800])),
+                    Text(_config.get_text(context,b_unit).toString(),textAlign: TextAlign.start,style: TextStyle(fontSize: 17,color:Colors.black)),
                   ],
                 )
               ],

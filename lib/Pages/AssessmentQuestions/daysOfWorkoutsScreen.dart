@@ -34,12 +34,12 @@ class _daysOfWorkoutsScreenState extends State<daysOfWorkoutsScreen> {
   void changeColor(){
     if(SelectedDays.length==0){
       is_Completed = false;
-      bu_color = Colors.grey[300];
+      bu_color =Color(int.parse("FFEDF7FC",radix: 16));
       bu_text_color = Colors.grey[600];
     }
     else{
       is_Completed = true;
-      bu_color = Colors.blue;
+      bu_color = Config.app_backgroungColor;
       bu_text_color = Colors.white;
     }
 
@@ -52,13 +52,13 @@ class _daysOfWorkoutsScreenState extends State<daysOfWorkoutsScreen> {
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "sat_txt"),Colors.grey[200],Colors.black));
-     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Sun_txt"),Colors.grey[200],Colors.black));
-     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Mon_txt"),Colors.grey[200],Colors.black));
-     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Tue_txt"),Colors.grey[200],Colors.black));
-     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Wed_txt"),Colors.grey[200],Colors.black));
-     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Thur_txt"),Colors.grey[200],Colors.black));
-     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Fri_txt"),Colors.grey[200],Colors.black));
+     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "sat_txt"),Color(int.parse("FFEDF7FC",radix: 16)),Colors.black));
+     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Sun_txt"),Color(int.parse("FFEDF7FC",radix: 16)),Colors.black));
+     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Mon_txt"),Color(int.parse("FFEDF7FC",radix: 16)),Colors.black));
+     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Tue_txt"),Color(int.parse("FFEDF7FC",radix: 16)),Colors.black));
+     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Wed_txt"),Color(int.parse("FFEDF7FC",radix: 16)),Colors.black));
+     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Thur_txt"),Color(int.parse("FFEDF7FC",radix: 16)),Colors.black));
+     numOfDays.add(DaysCircleColorModel(_config.get_text(context, "Fri_txt"),Color(int.parse("FFEDF7FC",radix: 16)),Colors.black));
   }
 
   @override
@@ -99,19 +99,30 @@ class _daysOfWorkoutsScreenState extends State<daysOfWorkoutsScreen> {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline4_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
-
+                          Row(
+                            children: [
+                              Text(_config.get_text(
+                                  context, "assessment_headline4_txt").toString(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 16,
+                                      color: Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(3/7)", textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.black)),
+                            ],
+                          )
 
                         ],
 
                       ),
                       SizedBox(height: 40,),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 60),
                         child: Container(
                           width: double.infinity,
                           child: Center(
-                            child:Text(_config.get_text(context, "days_workout_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                            child:Text(_config.get_text(context, "days_workout_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                           ),
                         ),
                       ),
@@ -129,14 +140,14 @@ class _daysOfWorkoutsScreenState extends State<daysOfWorkoutsScreen> {
                                   onTap: (){
                                     if(SelectedDays.contains(numOfDays[index]))
                                       {
-                                        numOfDays[index].m_Color = Colors.grey[200];
+                                        numOfDays[index].m_Color = Color(int.parse("FFEDF7FC",radix: 16));
                                         numOfDays[index].font_color = Colors.black;
                                         SelectedDays.remove(numOfDays[index]);
 
                                       }
                                     else
                                       {
-                                        numOfDays[index].m_Color = Colors.blue;
+                                        numOfDays[index].m_Color = Config.app_backgroungColor;
                                         numOfDays[index].font_color = Colors.white;
                                         SelectedDays.add(numOfDays[index]);
                                       }
@@ -180,7 +191,7 @@ class _daysOfWorkoutsScreenState extends State<daysOfWorkoutsScreen> {
                           },
                           child: Container(
 
-                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 50),
+                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 20),
                               child: LanguageSubmitButton(bu_text: _config.get_text(context,"assessment_continue_txt").toString(),bu_color: bu_color ,textColor: bu_text_color,))),
 
 

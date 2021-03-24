@@ -17,7 +17,7 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
   Config _config = Config();
   Color bu_color =Colors.grey[300] , bu_text_color = Colors.grey[600] ;
   Color bu_color_amrican =Colors.grey[300] , bu_text_color_american = Colors.grey[600] ;
-  Color bu_color_universal =Colors.blue , bu_text_color_universal = Colors.white ;
+  Color bu_color_universal =Config.app_backgroungColor , bu_text_color_universal = Colors.white ;
 
   String hintText = "";
 
@@ -35,9 +35,29 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
 
   void changeColor(){
     is_Completed = true;
-    bu_color = Colors.blue;
+    bu_color = Config.app_backgroungColor;
     bu_text_color = Colors.white;
     setState(() {});
+  }
+
+  void changeButton(){
+    if(is_kg){
+       bu_color_amrican =Colors.grey[300] ;
+      bu_text_color_american = Colors.grey[600] ;
+       bu_color_universal =Config.app_backgroungColor ;
+      bu_text_color_universal = Colors.white ;
+    }
+    else{
+      bu_color_universal=Colors.grey[300] ;
+      bu_text_color_universal = Colors.grey[600] ;
+      bu_color_amrican=Config.app_backgroungColor;
+      bu_text_color_american= Colors.white ;
+    }
+
+    setState(() {
+
+    });
+
   }
 
 
@@ -87,7 +107,13 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline2_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                          Row(
+                            children: [
+                              Text(_config.get_text(context,"assessment_headline2_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(1/2)",textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black)),
+                            ],
+                          )
 
 
                         ],
@@ -95,11 +121,11 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
                       ),
                       SizedBox(height: 40,),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 50),
                         child: Container(
                           width: double.infinity,
                           child: Center(
-                            child:Text(_config.get_text(context, "assessment_q4_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                            child:Text(_config.get_text(context, "assessment_q4_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                           ),
                         ),
                       ),
@@ -112,18 +138,18 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  width: 50,
+                                  width: 80,
                                   height: 70,
                                   child: TextFormField(
                                     focusNode: firstFocus,
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 3,
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(fontSize: 32,color:Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: '000',counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
-                                      if(v.length >= 3){
+                                      if(v.length >= 2){
                                         changeColor();
                                       }
                                     },
@@ -145,6 +171,7 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
                               child: GestureDetector(
                                   onTap: (){
                                     is_kg=true;
+                                    changeButton();
                                   },
                                   child: Container(
                                       child: LanguageSubmitButton(bu_text: _config.get_text(context,"weight_KG_unit_txt").toString(),bu_color: bu_color_universal ,textColor: bu_text_color_universal,))),
@@ -154,6 +181,7 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
                               child: GestureDetector(
                                   onTap: (){
                                     is_kg=false;
+                                    changeButton();
                                   },
                                   child: Container(
                                       child: LanguageSubmitButton(bu_text: _config.get_text(context,"weight_IB_unit_txt").toString().toString(),bu_color: bu_color_amrican ,textColor: bu_text_color_american,))),
@@ -177,7 +205,7 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
                             }
                           },
                           child: Container(
-                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 50),
+                              margin:EdgeInsets.symmetric(vertical: 5,horizontal: 20),
                               child: LanguageSubmitButton(bu_text: _config.get_text(context,"assessment_continue_txt").toString(),bu_color: bu_color ,textColor: bu_text_color,))),
 
 

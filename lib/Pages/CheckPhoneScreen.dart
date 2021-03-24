@@ -123,9 +123,9 @@ class CheckPhoneScreenClass extends StatelessWidget {
                     ),
                     children: <TextSpan>[
                       TextSpan(text: _config.get_text(context,"check_phone_terms")),
-                      TextSpan(text: _config.get_text(context,"check_phone_terms2"), style: new TextStyle(fontWeight: FontWeight.bold,color: Colors.blue,fontSize: 18)),
+                      TextSpan(text: _config.get_text(context,"check_phone_terms2"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
                       TextSpan(text: _config.get_text(context,"check_phone_terms3")),
-                      TextSpan(text: _config.get_text(context,"check_phone_terms4"), style: new TextStyle(fontWeight: FontWeight.bold,color: Colors.blue,fontSize: 18)),
+                      TextSpan(text: _config.get_text(context,"check_phone_terms4"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
                     ],
                   ),
                 ),
@@ -140,7 +140,7 @@ class CheckPhoneScreenClass extends StatelessWidget {
                  onTap: ()async{
                    await Provider.of<getActivationCodeViewModel>(context, listen: false).getActivationCode(m_phoneNumber);
                  },
-                   child: LanguageSubmitButton(bu_text: _config.get_text(context,"check_phone_button_text"),bu_color: Colors.blue[800],textColor: Colors.white,)),
+                   child: LanguageSubmitButton(bu_text: _config.get_text(context,"check_phone_button_text"),bu_color: Config.app_backgroungColor,textColor: Colors.white,)),
                 SizedBox(height: 20,),
                 GestureDetector(
                   onTap: (){
@@ -155,7 +155,7 @@ class CheckPhoneScreenClass extends StatelessWidget {
                       ),
                       children: <TextSpan>[
                         TextSpan(text: _config.get_text(context,"already_have_acount")),
-                        TextSpan(text: _config.get_text(context,"already_have_acount2"), style: new TextStyle(fontWeight: FontWeight.bold,color: Colors.blue,fontSize: 18)),
+                        TextSpan(text: _config.get_text(context,"already_have_acount2"), style: new TextStyle(fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 18)),
                       ],
                     ),
                   ),

@@ -18,10 +18,10 @@ class goalIsScreen extends StatefulWidget {
 
 class _goalIsScreenState extends State<goalIsScreen> {
   Config _config = Config();
-  Color bu_color =Colors.grey[300] , bu_text_color = Colors.grey[600] ;
-  Color lose_bu =Colors.grey[300] , lose_bu_text_color = Colors.grey[600] ;
-  Color Gain_bu =Colors.grey[300] , Gain_bu_text_color = Colors.grey[600] ;
-  Color Maintaine_bu =Colors.grey[300] , Maintaine_bu_text_color = Colors.grey[600] ;
+  Color bu_color =Color(int.parse("FFEDF7FC",radix: 16)) , bu_text_color = Colors.black ;
+  Color lose_bu =Color(int.parse("FFEDF7FC",radix: 16)) , lose_bu_text_color = Colors.black ;
+  Color Gain_bu =Color(int.parse("FFEDF7FC",radix: 16)) , Gain_bu_text_color = Colors.black ;
+  Color Maintaine_bu =Color(int.parse("FFEDF7FC",radix: 16)) , Maintaine_bu_text_color = Colors.black ;
 
   String hintText = "";
   String selected_bu="";
@@ -36,24 +36,24 @@ class _goalIsScreenState extends State<goalIsScreen> {
       case 1:
 
             if(selectedWeigtEnum == SelectedWeigtEnum.none){
-              lose_bu =Colors.blue;
+              lose_bu =Config.app_backgroungColor;
               lose_bu_text_color = Colors.white;
               selectedWeigtEnum = SelectedWeigtEnum.lose;
               changeColor();
             }
             else if(selectedWeigtEnum == SelectedWeigtEnum.lose){
-              lose_bu =Colors.grey[300];
-              lose_bu_text_color = Colors.grey[600];
+              lose_bu =Color(int.parse("FFEDF7FC",radix: 16));
+              lose_bu_text_color = Colors.black;
               selectedWeigtEnum = SelectedWeigtEnum.none;
               changeColor();
             }
             else{
-              lose_bu =Colors.blue;
+              lose_bu =Config.app_backgroungColor;
               lose_bu_text_color = Colors.white;
-              Gain_bu =Colors.grey[300];
-              Gain_bu_text_color = Colors.grey[600];
-              Maintaine_bu =Colors.grey[300];
-              Maintaine_bu_text_color =Colors.grey[600];
+              Gain_bu =Color(int.parse("FFEDF7FC",radix: 16));
+              Gain_bu_text_color = Colors.black;
+              Maintaine_bu =Color(int.parse("FFEDF7FC",radix: 16));
+              Maintaine_bu_text_color =Colors.black;
               selectedWeigtEnum = SelectedWeigtEnum.lose;
               changeColor();
             }
@@ -62,24 +62,24 @@ class _goalIsScreenState extends State<goalIsScreen> {
       case 2:
 
           if(selectedWeigtEnum == SelectedWeigtEnum.none){
-            Gain_bu =Colors.blue;
+            Gain_bu =Config.app_backgroungColor;
             Gain_bu_text_color = Colors.white;
             selectedWeigtEnum = SelectedWeigtEnum.gain;
             changeColor();
           }
           else if(selectedWeigtEnum == SelectedWeigtEnum.gain){
-            Gain_bu =Colors.grey[300];
-            Gain_bu_text_color = Colors.grey[600];
+            Gain_bu =Color(int.parse("FFEDF7FC",radix: 16));
+            Gain_bu_text_color = Colors.black;
             selectedWeigtEnum = SelectedWeigtEnum.none;
             changeColor();
           }
           else{
-            Gain_bu =Colors.blue;
+            Gain_bu =Config.app_backgroungColor;
             Gain_bu_text_color = Colors.white;
-            lose_bu =Colors.grey[300];
-            lose_bu_text_color = Colors.grey[600];
-            Maintaine_bu =Colors.grey[300];
-            Maintaine_bu_text_color =Colors.grey[600];
+            lose_bu =Color(int.parse("FFEDF7FC",radix: 16));
+            lose_bu_text_color = Colors.black;
+            Maintaine_bu =Color(int.parse("FFEDF7FC",radix: 16));
+            Maintaine_bu_text_color =Colors.black;
             selectedWeigtEnum = SelectedWeigtEnum.gain;
             changeColor();
           }
@@ -88,24 +88,24 @@ class _goalIsScreenState extends State<goalIsScreen> {
       case 3:
 
           if(selectedWeigtEnum == SelectedWeigtEnum.none){
-            Maintaine_bu =Colors.blue;
+            Maintaine_bu =Config.app_backgroungColor;
             Maintaine_bu_text_color = Colors.white;
             selectedWeigtEnum = SelectedWeigtEnum.maintain;
             changeColor();
           }
           else if(selectedWeigtEnum == SelectedWeigtEnum.maintain){
-            Maintaine_bu =Colors.grey[300];
-            Maintaine_bu_text_color = Colors.grey[600];
+            Maintaine_bu =Color(int.parse("FFEDF7FC",radix: 16));
+            Maintaine_bu_text_color = Colors.black;
             selectedWeigtEnum = SelectedWeigtEnum.none;
             changeColor();
           }
           else{
-            Maintaine_bu =Colors.blue;
+            Maintaine_bu =Config.app_backgroungColor;
             Maintaine_bu_text_color = Colors.white;
-            Gain_bu =Colors.grey[300];
-            Gain_bu_text_color = Colors.grey[600];
-            lose_bu =Colors.grey[300];
-            lose_bu_text_color =Colors.grey[600];
+            Gain_bu =Color(int.parse("FFEDF7FC",radix: 16));
+            Gain_bu_text_color = Colors.black;
+            lose_bu =Color(int.parse("FFEDF7FC",radix: 16));
+            lose_bu_text_color =Colors.black;
             selectedWeigtEnum = SelectedWeigtEnum.maintain;
             changeColor();
           }
@@ -120,12 +120,12 @@ class _goalIsScreenState extends State<goalIsScreen> {
   void changeColor(){
     if(selectedWeigtEnum == SelectedWeigtEnum.none){
       is_Completed = false;
-      bu_color = Colors.grey[300];
-      bu_text_color = Colors.grey[600];
+      bu_color = Color(int.parse("FFEDF7FC",radix: 16));
+      bu_text_color = Colors.black;
     }
     else{
       is_Completed = true;
-      bu_color = Colors.blue;
+      bu_color = Config.app_backgroungColor;
       bu_text_color = Colors.white;
     }
 
@@ -179,7 +179,13 @@ class _goalIsScreenState extends State<goalIsScreen> {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline3_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                          Row(
+                            children: [
+                              Text(_config.get_text(context,"assessment_headline3_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(1/3)",textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black)),
+                            ],
+                          )
 
 
                         ],
@@ -187,11 +193,11 @@ class _goalIsScreenState extends State<goalIsScreen> {
                       ),
                       SizedBox(height: 40,),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 80),
                         child: Container(
                           width: double.infinity,
                           child: Center(
-                            child:Text(_config.get_text(context, "weight_goal_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                            child:Text(_config.get_text(context, "weight_goal_txt1"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                           ),
                         ),
                       ),
@@ -204,7 +210,7 @@ class _goalIsScreenState extends State<goalIsScreen> {
                           children: [
                            GestureDetector(
                             onTap: (){
-                              change_bu_color(1);
+                              go_to_navigate();
                             },
                             child: Container(
                                 child: LanguageSubmitButton(bu_text: _config.get_text(context,"weight_lose_txt").toString(),bu_color: lose_bu ,textColor: lose_bu_text_color,))),
@@ -213,7 +219,7 @@ class _goalIsScreenState extends State<goalIsScreen> {
 
                             GestureDetector(
                                 onTap: (){
-                                  change_bu_color(2);
+                                  go_to_navigate();
                                 },
                                 child: Container(
                                     child: LanguageSubmitButton(bu_text: _config.get_text(context,"weight_gain_txt").toString(),bu_color: Gain_bu ,textColor: Gain_bu_text_color,))),
@@ -222,7 +228,7 @@ class _goalIsScreenState extends State<goalIsScreen> {
 
                             GestureDetector(
                                 onTap: (){
-                                  change_bu_color(3);
+                                  go_to_navigate();
                                 },
                                 child: Container(
                                     child: LanguageSubmitButton(bu_text: _config.get_text(context,"weight_maintaine_txt").toString(),bu_color: Maintaine_bu ,textColor: Maintaine_bu_text_color,))),
@@ -234,7 +240,7 @@ class _goalIsScreenState extends State<goalIsScreen> {
 
                       SizedBox(height: 80,),
 
-                      GestureDetector(
+                    /*  GestureDetector(
                           onTap: ()async{
                             if(is_Completed){
                               if(widget.isEdit){
@@ -249,7 +255,7 @@ class _goalIsScreenState extends State<goalIsScreen> {
                           },
                           child: Container(
                               margin:EdgeInsets.symmetric(vertical: 5,horizontal: 50),
-                              child: LanguageSubmitButton(bu_text: _config.get_text(context,"assessment_continue_txt").toString(),bu_color: bu_color ,textColor: bu_text_color,))),
+                              child: LanguageSubmitButton(bu_text: _config.get_text(context,"assessment_continue_txt").toString(),bu_color: bu_color ,textColor: bu_text_color,))),*/
 
 
                       SizedBox(height: 20,),
@@ -266,4 +272,16 @@ class _goalIsScreenState extends State<goalIsScreen> {
 
     );
   }
+
+  void go_to_navigate() {
+    if (widget.isEdit) {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (BuildContext context) => InformationSummaryScreen()));
+    }
+    else {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (BuildContext context) => goalWeightScreen(false)));
+    }
+  }
+
 }

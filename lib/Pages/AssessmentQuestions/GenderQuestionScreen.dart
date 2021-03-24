@@ -9,6 +9,7 @@ import 'package:fitmess/Pages/AssessmentQuestions/InformationSummaryScreen.dart'
 class GenderQuestionScreen extends StatelessWidget {
   bool isEdit;
   GenderQuestionScreen(this.isEdit);
+  Color box_backgroundColor ;
 
   Config _config = Config();
   @override
@@ -18,7 +19,7 @@ class GenderQuestionScreen extends StatelessWidget {
       statusBarIconBrightness: Brightness.dark,
       //or set color with: Color(0xFF0000FF)
     ));
-
+    box_backgroundColor = Color(_config.getColorFromHex("#EDF7FC"));
     return Material(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -51,7 +52,13 @@ class GenderQuestionScreen extends StatelessWidget {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline1_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                          Row(
+                            children: [
+                              Text(_config.get_text(context,"assessment_headline1_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(2/3)",textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black)),
+                            ],
+                          )
 
 
                         ],
@@ -59,10 +66,10 @@ class GenderQuestionScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 40,),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        margin: EdgeInsets.symmetric(horizontal: 50),
                         width: double.infinity,
                         child: Center(
-                          child:Text(_config.get_text(context, "assessment_q2_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                          child:Text(_config.get_text(context, "assessment_q2_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                         ),
                       ),
                       SizedBox(height: 40,),
@@ -89,7 +96,7 @@ class GenderQuestionScreen extends StatelessWidget {
                               },
                               child:Container(
                                 height: 170,
-                                color: Colors.grey[200],
+                                color: box_backgroundColor,
                                 padding: EdgeInsets.only(top: 20,bottom: 20,),
                                 margin: EdgeInsets.symmetric(horizontal: 10),
                                 child:Column(
@@ -98,7 +105,7 @@ class GenderQuestionScreen extends StatelessWidget {
                                   children: [
                                     Image.asset("assets/drawables/ic_male.png") ,
                                     SizedBox(height: 20,),
-                                    Text(_config.get_text(context, "assessment_Male_txt"),style: TextStyle(fontSize: 16),textAlign: TextAlign.center,),
+                                    Text(_config.get_text(context, "assessment_Male_txt"),style: TextStyle(fontSize: 15),textAlign: TextAlign.center,),
                                   ],
                                 ) ,
                               ),
@@ -116,14 +123,14 @@ class GenderQuestionScreen extends StatelessWidget {
                                 }
                                 else
                                 {
-                                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                  Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) => HeightQuestionScreen(false)));
                                 }
 
                               },
                               child:Container(
                                 height: 170,
-                                color: Colors.grey[200],
+                                color: box_backgroundColor,
                                 padding: EdgeInsets.only(top: 20,bottom: 20),
                                 margin: EdgeInsets.symmetric(horizontal: 10),
                                 child:Center(
@@ -133,7 +140,7 @@ class GenderQuestionScreen extends StatelessWidget {
                                     children: [
                                       Image.asset("assets/drawables/ic_female.png") ,
                                       SizedBox(height: 20,),
-                                      Text(_config.get_text(context, "assessment_Female_txt"),style: TextStyle(fontSize: 16),textAlign: TextAlign.center,),
+                                      Text(_config.get_text(context, "assessment_Female_txt"),style: TextStyle(fontSize: 15),textAlign: TextAlign.center,),
                                     ],
                                   ) ,
                                 ) ,

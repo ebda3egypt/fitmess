@@ -42,7 +42,7 @@ class BodyNeedsScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
 
-                              Text(_config.get_text(context,"body_needs_headline_1").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 30,color:Colors.black)),
+                              Text(_config.get_text(context,"body_needs_headline_1").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 24,color:Colors.black)),
                               Image.asset("assets/drawables/ic_strong.png"),
                             ],
                           )
@@ -53,7 +53,7 @@ class BodyNeedsScreen extends StatelessWidget {
 
                       Container(
                           margin: EdgeInsets.symmetric(vertical: 0,horizontal: 40),
-                          child:Text(_config.get_text(context,"body_needs_headline_2").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.grey[800]))
+                          child:Text(_config.get_text(context,"body_needs_headline_2").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 15,color:Colors.black))
 
                       ),
                       SizedBox(height: 20,),
@@ -74,14 +74,14 @@ class BodyNeedsScreen extends StatelessWidget {
                           child: RichText(
                             text: new TextSpan(
                               style: new TextStyle(
-                                fontSize: 16,
+                                fontSize: 17,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                               children: <TextSpan>[
                                 TextSpan(text: _config.get_text(context,"body_needs_text_1")),
-                                TextSpan(text: "0.5 ", style: new TextStyle(color: Colors.blue,fontSize: 18)),
-                                TextSpan(text:  _config.get_text(context,"weight_KG_unit_txt")+"  ", style: new TextStyle(color: Colors.blue,fontSize: 18)),
+                                TextSpan(text: "0.5 ", style: new TextStyle(color: Config.app_backgroungColor,fontSize: 18)),
+                                TextSpan(text:  _config.get_text(context,"weight_KG_unit_txt")+"  ", style: new TextStyle(color: Config.app_backgroungColor,fontSize: 18)),
                                 TextSpan(text:  _config.get_text(context,"body_needs_text_2"),),
                               ],
                             ),
@@ -102,7 +102,7 @@ class BodyNeedsScreen extends StatelessWidget {
                           },
                           child: Container(
                               margin:EdgeInsets.symmetric(vertical: 5,horizontal: 20),
-                              child: LanguageSubmitButton(bu_text: _config.get_text(context,"start_text").toString(),bu_color: Colors.blue[800],textColor: Colors.white,))),
+                              child: LanguageSubmitButton(bu_text: _config.get_text(context,"start_text").toString(),bu_color: Config.app_backgroungColor,textColor: Colors.white,))),
 
 
                       SizedBox(height: 20,),

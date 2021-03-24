@@ -81,7 +81,7 @@ class InformationSummaryScreen extends StatelessWidget {
                           ),
 
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"information_review_text").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.blue))
+                          Text(_config.get_text(context,"information_review_text").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 15,color:Config.app_backgroungColor))
 
 
                         ],
@@ -91,7 +91,7 @@ class InformationSummaryScreen extends StatelessWidget {
                       SizedBox(height: 20,),
                       Container(
                           margin: EdgeInsets.symmetric(vertical: 0,horizontal: 40),
-                          child:Text(_config.get_text(context,"information_summary_text").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 30,color:Colors.black)),
+                          child:Text(_config.get_text(context,"information_summary_text").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 24,color:Colors.black)),
 
                       ),
 
@@ -99,7 +99,7 @@ class InformationSummaryScreen extends StatelessWidget {
 
                       Container(
                           margin: EdgeInsets.symmetric(vertical: 0,horizontal: 40),
-                          child:Text(_config.get_text(context,"review_text").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.grey[800]))
+                          child:Text(_config.get_text(context,"review_text").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 15,color:Colors.grey[800]))
 
                       ),
 
@@ -118,7 +118,7 @@ class InformationSummaryScreen extends StatelessWidget {
                                crossAxisAlignment: CrossAxisAlignment.center,
                                children: [
 
-                                 Text(summary_data[index].headline.toString(),style: TextStyle(fontSize: 14,)),
+                                 Text(summary_data[index].headline.toString(),style: TextStyle(fontSize: 17,)),
 
                                  GestureDetector(
                                    onTap: (){
@@ -128,11 +128,11 @@ class InformationSummaryScreen extends StatelessWidget {
                                      mainAxisAlignment: MainAxisAlignment.start,
                                      crossAxisAlignment: CrossAxisAlignment.center,
                                      children: [
-                                       Text(summary_data[index].amount.toString(),style: TextStyle(fontSize: 14,)),
+                                       Text(summary_data[index].amount.toString(),style: TextStyle(fontSize: 15,)),
                                        SizedBox(width: 5,),
-                                       Text(summary_data[index].unit.toString(),style: TextStyle(fontSize: 14,)),
+                                       Text(summary_data[index].unit.toString(),style: TextStyle(fontSize: 15,)),
                                        SizedBox(width: 10,),
-                                       Icon(Icons.edit,color: Colors.blue,size: 20,)
+                                       Icon(Icons.edit,color: Config.app_backgroungColor,size: 20,)
                                      ],
                                    ),
                                  ),
@@ -157,7 +157,7 @@ class InformationSummaryScreen extends StatelessWidget {
                           },
                           child: Container(
                               margin:EdgeInsets.symmetric(vertical: 5,horizontal: 20),
-                              child: LanguageSubmitButton(bu_text: _config.get_text(context,"start_text").toString(),bu_color: Colors.blue[800],textColor: Colors.white,))),
+                              child: LanguageSubmitButton(bu_text: _config.get_text(context,"start_text").toString(),bu_color: Config.app_backgroungColor,textColor: Colors.white,))),
 
 
                       //SizedBox(height: 20,),

@@ -16,10 +16,10 @@ class numOfMealsScreen extends StatefulWidget {
 
 class _numOfMealsScreenState extends State<numOfMealsScreen> {
   Config _config = Config();
-  Color bu_color =Colors.grey[300] , bu_text_color = Colors.grey[600] ;
-  Color lose_bu =Colors.grey[100] , lose_bu_text_color = Colors.grey[600] ;
-  Color Gain_bu =Colors.grey[100] , Gain_bu_text_color = Colors.grey[600] ;
-  Color Maintaine_bu =Colors.grey[100] , Maintaine_bu_text_color = Colors.grey[600] ;
+  Color bu_color =Color(int.parse("FFEDF7FC",radix: 16)) , bu_text_color = Colors.black ;
+  Color lose_bu =Color(int.parse("FFEDF7FC",radix: 16)) , lose_bu_text_color = Colors.black ;
+  Color Gain_bu =Color(int.parse("FFEDF7FC",radix: 16)) , Gain_bu_text_color = Colors.black ;
+  Color Maintaine_bu =Color(int.parse("FFEDF7FC",radix: 16)) , Maintaine_bu_text_color = Colors.black ;
 
   @override
   Widget build(BuildContext context) {
@@ -57,17 +57,30 @@ class _numOfMealsScreenState extends State<numOfMealsScreen> {
                             ),
                           ),
                           SizedBox(width: 10,),
-                          Text(_config.get_text(context,"assessment_headline4_txt").toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 16,color:Colors.black))
+                          Row(
+                            children: [
+                              Text(_config.get_text(
+                                  context, "assessment_headline4_txt").toString(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 16,
+                                      color: Config.app_backgroungColor)),
+                              SizedBox(width: 5,),
+                              Text("(6/7)", textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.black)),
+                            ],
+                          )
+
                         ],
 
                       ),
                       SizedBox(height: 40,),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 60),
                         child: Container(
                           width: double.infinity,
                           child: Center(
-                            child:Text(_config.get_text(context, "meal_text_headline"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                            child:Text(_config.get_text(context, "meal_text_headline"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                           ),
                         ),
                       ),
