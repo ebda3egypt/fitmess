@@ -172,5 +172,13 @@
   "meals_text": "وجبة",
   "snacks_eat_text": "وجبات خفيفة أتناولها يوميًا",
   "snacks_text": "وجبة خفيفة ",
-  "unlike_items_text": "المواد الغذائية التي لا أحبها"
+  "unlike_items_text": "المواد الغذائية التي لا أحبها",
+  "neck_size_q": "ما هو حجم رقبتك؟",
+  "chest_size_q": "ما هو حجم صدرك؟",
+  "waist_size_q": "ما هو حجم خصرك؟",
+  "hips_size_q": "ما هو حجم الوركين لديك؟",
+  "right_arm_size_q": "ما هو حجم ذراعك الأيمن؟",
+  "left_arm_size_q": "ما هو حجم ذراعك اليسرى؟",
+  "right_thigh_size_q": "ما هو حجم الفخذ الأيمن الخاص بك؟",
+  "left_thigh_size_q": "ما هو حجم الفخذ الأيسر؟"
 }

@@ -166,6 +166,13 @@
   "meals_text": "meals",
   "snacks_eat_text": "Snacks I eat daily ",
   "snacks_text": "Snacks ",
-  "unlike_items_text": "Food items i don't like "
-
+  "unlike_items_text": "Food items i don't like ",
+  "neck_size_q": "What's Your Neck Size ?",
+  "chest_size_q": "What's Your Chest Size ?",
+  "waist_size_q": "What's Your Waist Size ?",
+  "hips_size_q": "What's Your Hips Size ?",
+  "right_arm_size_q": "What's Your Right Arm Size ?",
+  "left_arm_size_q": "What's Your Left Arm Size ?",
+  "right_thigh_size_q": "What's Your Right Thigh Size ?",
+  "left_thigh_size_q": "What's Your Left Thigh Size ?"
 }

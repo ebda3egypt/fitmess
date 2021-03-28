@@ -15,9 +15,10 @@ class birthdayQuestionScreen extends StatefulWidget {
 
 class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
   Config _config = Config();
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   Color bu_color =Colors.grey[300] , bu_text_color = Colors.grey[600];
   bool is_Completed =false;
+  String text_1="",text_2="",text_3="",text_4="",text_5="",text_6="",text_7="",text_8="";
   final firstFocus = FocusNode();
   final secondFocus = FocusNode();
   final thirdFocus = FocusNode();
@@ -46,6 +47,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
 
     return Material(
       child: Scaffold(
+        key: _scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBarWidget().AppBarWid(),
         body: Padding(
@@ -123,8 +125,11 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     decoration: InputDecoration(hintText: 'D',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
+                                      text_1=v.toString();
+
                                       if(v.length==1){
                                         firstFocus.nextFocus();
+
                                         // FocusScope.of(context).requestFocus(focus);
                                       }
 
@@ -141,8 +146,11 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     decoration: InputDecoration(hintText: 'D',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
+                                      text_2=t.toString();
+
                                       if(t.length==1){
                                         secondFocus.nextFocus();
+
                                       }
                                       if(t.length == 0){
                                         secondFocus.previousFocus();
@@ -163,9 +171,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     style: TextStyle(fontSize: 32),
                                     decoration: InputDecoration(hintText: '/',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
-                                    onChanged: (v){
 
-                                    },
                                   ),
                                 ),
 
@@ -181,6 +187,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     decoration: InputDecoration(hintText: 'M',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
+                                      text_3=v.toString();
                                       if(v.length==1){
                                         thirdFocus.nextFocus();
                                       }
@@ -201,6 +208,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     decoration: InputDecoration(hintText: 'M',counterText: "",border: InputBorder.none),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
+                                      text_4=t.toString();
                                       if(t.length==1){
                                         forthFocus.nextFocus();
                                       }
@@ -224,9 +232,6 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     style: TextStyle(fontSize: 32),
                                     decoration: InputDecoration(hintText: '/',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
-                                    onChanged: (v){
-
-                                    },
                                   ),
                                 ),
 
@@ -242,8 +247,10 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
+                                      fifthFocus.nextFocus();
                                       if(v.length==1){
-                                        fifthFocus.nextFocus();
+
+                                        text_5=v.toString();
                                       }
                                       if(v.length == 0){
                                         fifthFocus.previousFocus();
@@ -263,6 +270,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
+                                      text_6=t.toString();
                                       if(t.length==1){
                                         sixthFocus.nextFocus();
                                       }
@@ -284,6 +292,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
+                                      text_7=t.toString();
                                       if(t.length==1){
                                         seventhFocus.nextFocus();
                                       }
@@ -305,6 +314,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                                     decoration: InputDecoration(hintText: 'Y',counterText: "",border: InputBorder.none,),
                                     keyboardType: TextInputType.number,
                                     onChanged: (t){
+                                      text_8=t.toString();
                                       if(t.length==1){
                                         changeColor();
                                         //eighthFocus.nextFocus();
@@ -326,14 +336,7 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
                       GestureDetector(
                           onTap: (){
                             if(is_Completed){
-                              if(widget.isEdit){
-                                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                                    builder: (BuildContext context) =>InformationSummaryScreen()));
-                              }
-                              else{
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (BuildContext context) => GenderQuestionScreen(false)));
-                              }
+                             checkFilles();
                             }
                            /* Navigator.of(context).pushReplacement(MaterialPageRoute(
                                 builder: (BuildContext context) => HomePage()));*/
@@ -356,5 +359,29 @@ class _birthdayQuestionScreenState extends State<birthdayQuestionScreen> {
         ),
       ),
     );
+  }
+  void checkFilles(){
+
+    if(text_1.length>0 && text_2.length>0 && text_3.length>0 && text_4.length>0
+        && text_5.length>0 && text_6.length>0 &&  text_7.length>0 &&  text_8.length>0){
+
+
+      Config.Assessment_req['birthDay'] = text_1+text_2+"-"+text_3+text_4+"-"+text_5+text_6+text_7+text_8;
+      
+      if(widget.isEdit){
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (BuildContext context) =>InformationSummaryScreen()));
+      }
+      else{
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (BuildContext context) => GenderQuestionScreen(false)));
+      }
+
+    }
+    else{
+      _scaffoldKey.currentState.showSnackBar(new SnackBar(content: new Text(
+      "برجاء كتابة التاريخ صحيحاً", textAlign: TextAlign.right,
+        style: TextStyle(fontFamily: 'Arabic'),)));
+    }
   }
 }

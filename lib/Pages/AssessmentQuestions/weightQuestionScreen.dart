@@ -19,7 +19,7 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
   Color bu_color_amrican =Colors.grey[300] , bu_text_color_american = Colors.grey[600] ;
   Color bu_color_universal =Config.app_backgroungColor , bu_text_color_universal = Colors.white ;
 
-  String hintText = "";
+  String hintText = "",weight_txt="";
 
   bool is_kg =false,is_Completed=false;
   final firstFocus = FocusNode();
@@ -149,6 +149,7 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
                                     decoration: InputDecoration(hintText: '000',counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
+                                      weight_txt=v;
                                       if(v.length >= 2){
                                         changeColor();
                                       }
@@ -194,6 +195,16 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
                       GestureDetector(
                           onTap: ()async{
                             if(is_Completed){
+
+                              if(is_kg){
+                                Config.Assessment_req['isKG'] = "y";
+                                Config.Assessment_req['Weight'] = weight_txt;
+                              }
+                              else{
+                                Config.Assessment_req['isKG'] = "n";
+                                Config.Assessment_req['Weight'] = weight_txt;
+                              }
+
                               if(widget.isEdit){
                                 Navigator.of(context).pushReplacement(MaterialPageRoute(
                                     builder: (BuildContext context) =>InformationSummaryScreen()));

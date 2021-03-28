@@ -20,7 +20,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
   Color bu_color_amrican =Colors.grey[300] , bu_text_color_american = Colors.grey[600] ;
   Color bu_color_universal =Config.app_backgroungColor , bu_text_color_universal = Colors.white ;
 
-  String hintText = "",hintText2="";
+  String hintText = "",hintText2="",height_cm="",height_inch="";
 
   bool is_Completed =false,isAmerican=false;
   final firstFocus = FocusNode();
@@ -152,6 +152,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                                     decoration: InputDecoration(hintText: '000',counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
+                                      height_cm=v;
                                       if(v.length >= 3){
                                           changeColor();
                                           firstFocus.nextFocus();
@@ -191,8 +192,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                                     decoration: InputDecoration(hintText: "000",counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
-
-
+                                      height_inch=v;
                                     },
                                   ),
                                 ):Container(),
@@ -251,14 +251,23 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                       GestureDetector(
                           onTap: ()async{
                             if(is_Completed){
-                              if(widget.isEdit){
-                                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                                    builder: (BuildContext context) =>InformationSummaryScreen()));
-                              }
-                              else{
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (BuildContext context) => weightQuestionScreen(false)));
-                              }
+
+                                if(isAmerican){
+                                  Config.Assessment_req['Height'] = height_cm + hintText;
+                                }
+                                else
+                                {
+                                  Config.Assessment_req['Height'] = height_cm + hintText + height_inch + hintText2;
+                                }
+
+                                if(widget.isEdit){
+                                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                      builder: (BuildContext context) =>InformationSummaryScreen()));
+                                }
+                                else{
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) => weightQuestionScreen(false)));
+                                }
                             }
                             /* Navigator.of(context).pushReplacement(MaterialPageRoute(
                                 builder: (BuildContext context) => HomePage()));*/

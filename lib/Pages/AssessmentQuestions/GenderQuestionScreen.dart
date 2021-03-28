@@ -82,7 +82,9 @@ class GenderQuestionScreen extends StatelessWidget {
                           Expanded(
                             flex:1,
                             child: GestureDetector(
+
                               onTap: (){
+                                Config.Assessment_req['Gender'] = _config.get_text(context, "assessment_Male_txt");
                                 if(isEdit){
                                   Navigator.of(context).pushReplacement(MaterialPageRoute(
                                       builder: (BuildContext context) =>InformationSummaryScreen()));
@@ -117,6 +119,7 @@ class GenderQuestionScreen extends StatelessWidget {
                             flex:1,
                             child: GestureDetector(
                               onTap: (){
+                                Config.Assessment_req['Gender'] = _config.get_text(context, "assessment_Female_txt");
                                 if(isEdit){
                                   Navigator.of(context).pushReplacement(MaterialPageRoute(
                                       builder: (BuildContext context) =>InformationSummaryScreen()));

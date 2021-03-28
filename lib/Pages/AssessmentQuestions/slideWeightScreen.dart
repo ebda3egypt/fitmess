@@ -149,6 +149,9 @@ class _slideWeightScreenState extends State<slideWeightScreen> {
                       GestureDetector(
                           onTap: ()async{
                             if(is_Completed){
+
+                              Config.Assessment_req['SliderValue'] = avg_num.toString();
+                              
                               if(widget.isEdit){
                                 Navigator.of(context).pushReplacement(MaterialPageRoute(
                                     builder: (BuildContext context) =>InformationSummaryScreen()));

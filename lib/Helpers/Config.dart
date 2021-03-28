@@ -8,6 +8,7 @@ class Config{
   static String LoginURL="https://www.fitmessapp.com/include/webService.php?json=true&do=SignIn";
   static Color app_backgroungColor = Color(int.parse("FF1BAAF7",radix: 16));
   static Color app_light_grey = Color(int.parse("FFEDF7FC",radix: 16));
+  static Map<String,String>Assessment_req = new Map<String,String>();
 
 
   String get_text(var context ,String m_word){
