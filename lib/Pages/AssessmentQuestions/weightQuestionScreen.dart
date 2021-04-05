@@ -138,13 +138,14 @@ class _weightQuestionScreenState extends State<weightQuestionScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  width: 80,
+                                  width: MediaQuery.of(context).size.width-80,
                                   height: 70,
                                   child: TextFormField(
                                     focusNode: firstFocus,
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
                                     maxLength: 3,
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(fontSize: 32,color:Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: '000',counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,

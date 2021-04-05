@@ -84,18 +84,19 @@ class _introductionScreenState extends State<introductionScreen> {
                         SizedBox(height: 10,),
 
                         storyIndex==0 ? Container(
-                          margin: EdgeInsets.symmetric(vertical: 5,horizontal: 60),
+                          margin: EdgeInsets.only(top: 0,bottom:10,right:30,left: 30),
                           child: RichText(
+                            textAlign: TextAlign.center,
                               text: new TextSpan(
                                 style: new TextStyle(
-                                  fontSize: 24,
+                                  fontSize: 32,
                                   color: Colors.black,
                                 ),
                                 children: <TextSpan>[
                                   TextSpan(text: _config.get_text(context,"intro_txt_sc1_P1",),style: TextStyle(fontFamily: 'Arabic')),
-                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P2"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 26)),
+                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P2"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 30)),
                                   TextSpan(text: _config.get_text(context,"intro_txt_sc1_P3"),style: TextStyle(fontFamily: 'Arabic')),
-                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P4"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 26)),
+                                  TextSpan(text: _config.get_text(context,"intro_txt_sc1_P4"), style: new TextStyle(fontFamily: 'Arabic',fontWeight: FontWeight.bold,color: Config.app_backgroungColor,fontSize: 30)),
                                 ],
                               ),
                         )):Container(
@@ -113,10 +114,10 @@ class _introductionScreenState extends State<introductionScreen> {
                             child: Text(introductionData[storyIndex].text3.toString(),textAlign: TextAlign.center,style: TextStyle(fontSize: 17),)
                         ),
 
-                        storyIndex==0?Container(
+                       /* storyIndex==0?Container(
                             margin: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
                             child: Text(_config.get_text(context, "intro_txt_sc1_3"),textAlign: TextAlign.center,style: TextStyle(fontSize: 17),)
-                        ):Container(),
+                        ):Container(),*/
 
                         storyIndex==introductionData.length-1 ?Container(
                           margin: EdgeInsets.symmetric(vertical: 5,horizontal: 50),

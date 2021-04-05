@@ -60,7 +60,7 @@ class _slideWeightScreenState extends State<slideWeightScreen> {
             child: Center(
               child: Container(
                 width: double.infinity,
-                margin: EdgeInsets.only(top: 10),
+               // margin: EdgeInsets.only(top: 10),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -131,7 +131,7 @@ class _slideWeightScreenState extends State<slideWeightScreen> {
 
                             Slider(
                               value: sliderValue,
-                              divisions: 20,
+
                               activeColor: Config.app_backgroungColor,
                               onChanged: (v){
                                   sliderValue = v;
@@ -144,7 +144,7 @@ class _slideWeightScreenState extends State<slideWeightScreen> {
                         ),
                       ),
 
-                      SizedBox(height: 80,),
+                      SizedBox(height: 50,),
 
                       GestureDetector(
                           onTap: ()async{

@@ -112,6 +112,8 @@ class LoginScreenClass extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20,),
+                Text(_config.get_text(context, "Register_password_txt"),style: TextStyle(fontSize: 15),),
+                SizedBox(height: 10,),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 5),
                   padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
@@ -122,7 +124,7 @@ class LoginScreenClass extends StatelessWidget {
                   child: TextFormField(
                     style: TextStyle(fontSize: 15),
                     decoration: InputDecoration.collapsed(
-                      hintText: "************",
+                      hintText:_config.get_text(context, "Register_enter_password_txt") ,
                     ),
                     controller: _passwordController,
                     keyboardType: TextInputType.text,

@@ -43,6 +43,26 @@ class _goalWeightScreenState extends State<goalWeightScreen> {
     setState(() {});
   }
 
+  void changeButton(){
+    if(is_kg){
+      bu_color_amrican =Colors.grey[300] ;
+      bu_text_color_american = Colors.grey[600] ;
+      bu_color_universal =Config.app_backgroungColor ;
+      bu_text_color_universal = Colors.white ;
+    }
+    else{
+      bu_color_universal=Colors.grey[300] ;
+      bu_text_color_universal = Colors.grey[600] ;
+      bu_color_amrican=Config.app_backgroungColor;
+      bu_text_color_american= Colors.white ;
+    }
+
+    setState(() {
+
+    });
+
+  }
+
 
 
   @override
@@ -120,11 +140,12 @@ class _goalWeightScreenState extends State<goalWeightScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  width: 80,
+                                  width: MediaQuery.of(context).size.width-80,
                                   height: 70,
                                   child: TextFormField(
                                     focusNode: firstFocus,
                                     textInputAction: TextInputAction.next,
+                                    textAlign: TextAlign.center,
                                     autofocus: true,
                                     maxLength: 3,
                                     style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
@@ -156,6 +177,7 @@ class _goalWeightScreenState extends State<goalWeightScreen> {
                               child: GestureDetector(
                                   onTap: (){
                                     is_kg=true;
+                                    changeButton();
                                   },
                                   child: Container(
                                       child: LanguageSubmitButton(bu_text: _config.get_text(context,"weight_KG_unit_txt").toString(),bu_color: bu_color_universal ,textColor: bu_text_color_universal,))),
@@ -165,6 +187,7 @@ class _goalWeightScreenState extends State<goalWeightScreen> {
                               child: GestureDetector(
                                   onTap: (){
                                     is_kg=false;
+                                    changeButton();
                                   },
                                   child: Container(
                                       child: LanguageSubmitButton(bu_text: _config.get_text(context,"weight_IB_unit_txt").toString().toString(),bu_color: bu_color_amrican ,textColor: bu_text_color_american,))),

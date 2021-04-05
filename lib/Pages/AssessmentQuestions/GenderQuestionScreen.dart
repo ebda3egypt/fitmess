@@ -32,7 +32,7 @@ class GenderQuestionScreen extends StatelessWidget {
             child: Center(
               child: Container(
                 width: double.infinity,
-                margin: EdgeInsets.only(top: 80),
+                //margin: EdgeInsets.only(top: 80),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -91,7 +91,7 @@ class GenderQuestionScreen extends StatelessWidget {
                                 }
                                 else
                                 {
-                                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                  Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) => HeightQuestionScreen(false)));
                                 }
 

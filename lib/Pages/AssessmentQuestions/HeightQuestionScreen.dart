@@ -90,7 +90,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
             child: Center(
               child: Container(
                 width: double.infinity,
-                margin: EdgeInsets.only(top: 50),
+               // margin: EdgeInsets.only(top: 50),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -128,7 +128,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                         child: Container(
                           width: double.infinity,
                           child: Center(
-                            child:Text(_config.get_text(context, "assessment_q3_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                            child:Text(_config.get_text(context, "assessment_q3_txt"),textAlign: TextAlign.center,style: TextStyle(fontSize: 32),),
                           ),
                         ),
                       ),
@@ -140,35 +140,46 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Container(
-                                  width: 80,
+                                 Container(
+                                  width:isAmerican?30 :60,
                                   height: 70,
                                   child: TextFormField(
                                     focusNode: firstFocus,
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
-                                    maxLength: 3,
+                                    maxLength:isAmerican?1 : 3,
                                     style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
-                                    decoration: InputDecoration(hintText: '000',counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
+                                    decoration: InputDecoration(hintText:isAmerican? "0": '000',counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
                                       height_cm=v;
-                                      if(v.length >= 3){
+                                      if(isAmerican){
+                                        if(v.length >= 1){
+
                                           changeColor();
                                           firstFocus.nextFocus();
+                                        }
                                       }
+                                      else{
+                                        if(v.length >= 3){
+
+                                          changeColor();
+                                          firstFocus.nextFocus();
+                                        }
+                                      }
+
                                     },
                                   ),
                                 ),
 
 
                                 Container(
-                                  width: 80,
+                                  width: 50,
                                   height: 70,
                                   child: TextFormField(
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
-                                    maxLength: 1,
+                                    maxLength: 3,
                                     enabled: false,
                                     style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
                                     decoration: InputDecoration(hintText: hintText,counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
@@ -180,16 +191,16 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                                 ),
 
                                 isAmerican? Container(
-                                  width: 80,
+                                  width: 50,
                                   height: 70,
                                   child: TextFormField(
                                     focusNode: secondFocus,
                                     textInputAction: TextInputAction.next,
                                     autofocus: true,
-                                    maxLength: 1,
+                                    maxLength: 2,
                                     enabled: true,
                                     style: TextStyle(fontSize: 32,color: Config.app_backgroungColor),
-                                    decoration: InputDecoration(hintText: "000",counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
+                                    decoration: InputDecoration(hintText: "00",counterText: "",border: InputBorder.none,hintStyle: TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.number,
                                     onChanged: (v){
                                       height_inch=v;
@@ -198,7 +209,7 @@ class _HeightQuestionScreenState extends State<HeightQuestionScreen> {
                                 ):Container(),
 
                                 isAmerican? Container(
-                                  width: 80,
+                                  width: 70,
                                   height: 70,
                                   child: TextFormField(
                                     textInputAction: TextInputAction.next,

@@ -2,8 +2,10 @@ import 'package:fitmess/Pages/AssessmentQuestions/birthdayQuestionScreen.dart';
 import 'package:fitmess/Pages/BodyMeasurement/neckSizeScreen.dart';
 import 'package:fitmess/Pages/SplachScreen.dart';
 import 'package:fitmess/Pages/WelcomeScreen.dart';
-import 'package:fitmess/Pages/LoginScreen.dart';
+import 'package:fitmess/Pages/introductionScreen.dart';
 import 'package:fitmess/Pages/RegisterScreen.dart';
+import 'package:fitmess/Pages/ResetPasswordScreen.dart';
+import 'package:fitmess/Pages/VerfiyPhoneNumberScreen.dart';
 import 'package:fitmess/Models/JSONEmailPasswordModel.dart';
 
 import 'package:fitmess/localization/demo_localization.dart';
@@ -66,7 +68,7 @@ class _MyAppState extends State<MyApp> {
       ),
 
       
-      home:neckSizeScreen(false)/*birthdayQuestionScreen(false)*/ /*RegisterScreen(jsonEmailPasswordModel: new JSONEmailPasswordModel(ID: "2689",username: "201062780652",
+      home:introductionScreen()/*SplachScreen()*//*neckSizeScreen(false)*//*birthdayQuestionScreen(false)*//* RegisterScreen(jsonEmailPasswordModel: new JSONEmailPasswordModel(ID: "2689",username: "201062780652",
           json_password: "1da1644a89d84da276f68046b9bcac68fc",activationCode: "925586"))*/,
     );
   }

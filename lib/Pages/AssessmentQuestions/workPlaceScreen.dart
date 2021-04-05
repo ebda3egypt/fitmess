@@ -24,7 +24,7 @@ class workPlaceScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBarWidget().AppBarWid(),
         body:Container(
-            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 5),
+            padding: EdgeInsets.symmetric(vertical: 0,horizontal: 5),
             color: Colors.white,
             child: Center(
               child: Container(

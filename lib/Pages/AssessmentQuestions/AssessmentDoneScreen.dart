@@ -20,7 +20,7 @@ class _AssessmentDoneScreenState extends State<AssessmentDoneScreen> {
     // TODO: implement initState
     super.initState();
 
-    Timer(Duration(seconds: 2), () => Navigator.of(context).push(MaterialPageRoute(
+    Timer(Duration(seconds: 5), () => Navigator.of(context).push(MaterialPageRoute(
         builder: (BuildContext context) => BodyNeedsScreen())));
   }
 
